@@ -14,7 +14,16 @@
   background-color: var(--primary);
   color: var(--white);
 }
-  
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -32,15 +41,6 @@ body {
 @media only screen and (max-device-width: 1025px){
   :root{
     font-size: 18px;
-  }
-  #parallax-grid {
-    display: none;
-  }
-  body{
-    background-size: 75px 75px;
-    background-image:
-    linear-gradient(to right, #212230 1px, transparent 1px),
-    linear-gradient(to bottom, #212230 1px, transparent 1px);
   }
 }
 

@@ -1,4 +1,4 @@
-@import '../index.css'; /*Im not sure if this method of import actually works... Needs testing*/
+@import '../index.css';
 
 #parallax-grid {
   position: absolute;
@@ -121,4 +121,29 @@ input:focus {
 .inactive {
   color: var(--black);
   font-weight: 600;
+}
+
+@media only screen and (max-device-width: 1025px){
+  :root {
+    font-size: 18px;
+  }
+  #parallax-grid {
+    display: none;
+  }
+  body {
+    background-size: 75px 75px;
+    background-image:
+    linear-gradient(to right, #212230 1px, transparent 1px),
+    linear-gradient(to bottom, #212230 1px, transparent 1px);
+  }
+  #main {
+    transform: translate(4px, 4px);
+  }
+}
+
+/*Mobile responsiveness*/
+@media only screen and (max-device-width: 450px){
+  :root {
+    font-size: 12px;
+  }
 }

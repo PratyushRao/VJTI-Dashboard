@@ -1,11 +1,14 @@
-//import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom';
+import Login from './login/login.tsx';
+import './index.css';
 
 function App() {
   return (
-    <>
-    <h1>hello world</h1>
-    </>
-  )
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        {/*add other routes here*/}
+      </Routes>
+  );
 }
 
-export default App
+export default App;
