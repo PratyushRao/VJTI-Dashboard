@@ -1,11 +1,12 @@
 # Students-Portal
-DTI Project
+Stacks Required:-
 
-	Vite-React
+ For Frontend-
  
- 	Tailwind CSS
-  
-  	Deno
-   
-	MySQL
+	-Vite-React
+ 	-Tailwind CSS
+  For Backend- 
+  	
+   	-Deno
+	-MySQL
   
