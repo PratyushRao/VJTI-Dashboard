@@ -1,3 +1,5 @@
+@import '../index.css'; /*Im not sure if this method of import actually works... Needs testing*/
+
 #parallax-grid {
   position: absolute;
   top: -20%;

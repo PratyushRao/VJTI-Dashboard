@@ -1,11 +1,15 @@
+/*gets fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 :root {
   --primary: #AE152D;
   --blue: #266DD3;
   --green: #72B01D;
   --black: #1A1B25;
   --white: #E5E5E5;
+  --font-imp: "Jost";
+  --font-para: "Roboto Mono"
 }
-  
 ::selection{
   background-color: var(--primary);
   color: var(--white);
