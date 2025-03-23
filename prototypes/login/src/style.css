@@ -145,6 +145,7 @@ input:focus {
   font-weight: 600;
 }
 
+/*Tablet responsiveness*/
 @media only screen and (max-device-width: 1025px){
   :root{
     font-size: 18px;
@@ -160,6 +161,7 @@ input:focus {
   }
 }
 
+/*Mobile responsiveness*/
 @media only screen and (max-device-width: 450px){
   :root{
     font-size: 12px;

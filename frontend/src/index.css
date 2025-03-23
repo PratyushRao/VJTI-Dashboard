@@ -22,3 +22,27 @@ body {
   background-color: var(--black);
 }
   
+/*PC Stuff*/
+
+/*Tablet responsiveness*/
+@media only screen and (max-device-width: 1025px){
+  :root{
+    font-size: 18px;
+  }
+  #parallax-grid {
+    display: none;
+  }
+  body{
+    background-size: 75px 75px;
+    background-image:
+    linear-gradient(to right, #212230 1px, transparent 1px),
+    linear-gradient(to bottom, #212230 1px, transparent 1px);
+  }
+}
+
+/*Mobile responsiveness*/
+@media only screen and (max-device-width: 450px){
+  :root{
+    font-size: 12px;
+  }
+}
