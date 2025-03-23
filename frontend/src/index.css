@@ -1,0 +1,24 @@
+:root {
+  --primary: #AE152D;
+  --blue: #266DD3;
+  --green: #72B01D;
+  --black: #1A1B25;
+  --white: #E5E5E5;
+}
+  
+::selection{
+  background-color: var(--primary);
+  color: var(--white);
+}
+  
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  
+  background-color: var(--black);
+}
+  

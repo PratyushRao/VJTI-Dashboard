@@ -41,5 +41,5 @@ function handler(req: Request): Response {
 
 console.log(`HTTP server running on http://localhost:${port}`);
 
-// Start the server
+//start the server
 await serve(handler, { port });

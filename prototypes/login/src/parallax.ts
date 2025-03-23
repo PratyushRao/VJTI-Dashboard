@@ -3,6 +3,8 @@ const main = document.getElementById('main');
 const maxMovement = 16;
 
 document.addEventListener('mousemove', (e) => {
+  if (!grid || !main) return;
+  if (window.innerWidth < 1025)return;
   const mouseX = e.clientX / window.innerWidth;
   const mouseY = e.clientY / window.innerHeight;
   const moveX = (mouseX - 0.5) * maxMovement;
