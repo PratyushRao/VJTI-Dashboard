@@ -1,7 +1,6 @@
-# Students-Portal
 Stacks Needed:
 
-    Vite+React
-    Tailwind CSS
-    Deno
-    MySQL
+	Vite+React
+	Tailwind CSS
+	Deno
+	MySQL

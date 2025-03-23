@@ -1,0 +1,146 @@
+:root {
+  --primary: #AE152D;
+  --blue: #266DD3;
+  --green: #72B01D;
+  --black: #1A1B25;
+  --white: #E5E5E5;
+}
+
+::selection{
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  min-width: 320px;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--black);
+}
+
+#parallax-grid {
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-10%, -10%);
+  background-size: 75px 75px;
+  background-image:
+    linear-gradient(to right, #212230 1px, transparent 1px),
+    linear-gradient(to bottom, #212230 1px, transparent 1px);
+  transition: transform 0.1s ease;
+  z-index: -1;
+}
+
+#main {
+  margin: auto;
+  padding: 2rem;
+  width: auto;
+  max-width: 100vw;
+  max-height: 100vh;
+
+  background-color: var(--white);
+  box-shadow: var(--primary) 8px 8px;
+  transition: transform 0.1s ease;
+}
+
+#login {
+  width: auto;
+}
+
+#login > * {
+  display: block;
+  margin-inline: auto;
+  margin-block: 1rem;
+  padding: 0.5rem;
+}
+
+#user, #password {
+  width: 32ch;
+}
+
+h1 {
+  color: var(--black);
+  font-family: "Jost", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+input {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  font-family: "roboto mono", monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+input:focus {
+  background-color: #e5dfdf
+}
+
+#submit {
+  position: relative;
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 10rem;
+  height: auto;
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: "Jost", sans-serif;
+  font-size: 1.1rem;
+  padding: 0.3rem;
+  margin-top: 2rem;
+  transition: 60ms ease-in-out;
+  box-shadow: var(--black) 0 0;
+  font-weight: 500;
+  box-shadow: var(--black) 2px 2px;
+  transform: translate(-1px, -1px);
+}
+
+#submit:hover {
+  transition: 60ms ease-in-out;
+  box-shadow: var(--black) 3px 3px;
+  transform: translate(-2px, -2px);
+}
+
+#submit:active {
+  transition: 60ms ease-in-out;
+  background-color: #212230;
+}
+
+#toggle {
+  display: flex;
+  justify-content: center;
+}
+
+#toggle > button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: "roboto mono", monospace;
+  font-size: 1.1rem;
+  padding: 0.2rem;
+  margin: 0.5rem;
+  transition: 80ms ease-in;
+}
+
+.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary) !important;
+  font-weight: 700;
+}
+
+.inactive {
+  color: var(--black);
+  font-weight: 600;
+}
