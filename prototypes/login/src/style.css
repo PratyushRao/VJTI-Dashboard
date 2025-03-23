@@ -4,6 +4,8 @@
   --green: #72B01D;
   --black: #1A1B25;
   --white: #E5E5E5;
+  --font-imp: "Jost";
+  --font-text: "Roboto Mono";
 }
 
 ::selection{
@@ -67,7 +69,7 @@ body {
 
 h1 {
   color: var(--black);
-  font-family: "Jost", sans-serif;
+  font-family: var(--font-imp), sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
 }
@@ -78,7 +80,7 @@ input {
   border-bottom: 2px solid var(--primary);
   background-color: transparent;
   color: var(--primary);
-  font-family: "roboto mono", monospace;
+  font-family: var(--font-text), monospace;
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -96,7 +98,7 @@ input:focus {
   height: auto;
   background-color: var(--primary);
   color: var(--white);
-  font-family: "Jost", sans-serif;
+  font-family: var(--font-imp), sans-serif;
   font-size: 1.1rem;
   padding: 0.3rem;
   margin-top: 2rem;
@@ -127,7 +129,7 @@ input:focus {
   outline: none;
   border: none;
   background-color: transparent;
-  font-family: "roboto mono", monospace;
+  font-family: var(--font-text), monospace;
   font-size: 1.1rem;
   padding: 0.2rem;
   margin: 0.5rem;
