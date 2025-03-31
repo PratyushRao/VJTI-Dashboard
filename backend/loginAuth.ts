@@ -1,5 +1,6 @@
 export async function validateUser(client, utype, uname, pass) {
   let results;
+  
   switch(utype){
     case 'student':
       results = await client.query(
@@ -14,6 +15,7 @@ export async function validateUser(client, utype, uname, pass) {
     );
     break;
   }
+
   if (results.length > 0) return {
     status: 200,
     data: {message: "okay"}

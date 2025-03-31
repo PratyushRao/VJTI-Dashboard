@@ -2,7 +2,7 @@ import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { Client } from "https://deno.land/x/mysql@v2.12.0/mod.ts";
 import { validateUser } from "./loginAuth.ts";
 
-// Database connection
+//MySQL db connection
 const client = await new Client().connect({
     hostname: "localhost",
     username: "root",
@@ -33,7 +33,7 @@ export const handler = async (req: Request): Promise<Response> => {
             const headers = new Headers(corsHeaders);
             headers.set('Content-Type', 'application/json');
             
-            // Return authentication result
+            //return authentication result
             return new Response(JSON.stringify(authResult.data), {
                 headers,
                 status: authResult.status
@@ -52,7 +52,7 @@ export const handler = async (req: Request): Promise<Response> => {
         }
     }
 
-    // 404 for other routes
+    // 404 Not Found
     return new Response(JSON.stringify({ message: "Not Found" }), {
         headers: new Headers(corsHeaders),
         status: 404
