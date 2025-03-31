@@ -1,5 +1,9 @@
 @import '../index.css';
 
+body {
+  background-color: var(--black);
+}
+
 #parallax-grid {
   position: absolute;
   top: -20%;
