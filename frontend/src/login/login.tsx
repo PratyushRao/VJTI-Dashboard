@@ -8,36 +8,29 @@ function Login() {
   const mainRef = useRef<HTMLDivElement>(null);
   const maxMovement = 16;
 
-  // Toggle between student and faculty
+  //toggle between student and faculty
   const toggleUserType = (type: 'student' | 'faculty') => {
     setUserType(type);
     setPlaceholderText(type === 'student' ? 'VJTI ID Number' : 'VJTI Email Address');
   };
 
-  // Parallax effect
+  //parallax effect
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const parallax = (e: MouseEvent) => {
       const mouseX = e.clientX / window.innerWidth;
       const mouseY = e.clientY / window.innerHeight;
       const moveX = (mouseX - 0.5) * maxMovement;
       const moveY = (mouseY - 0.5) * maxMovement;
       
       requestAnimationFrame(() => {
-        if (gridRef.current) {
-          gridRef.current.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
-        }
-        if (mainRef.current) {
-          mainRef.current.style.transform = `translate(${8 + moveX * 0.4}px, ${8 + moveY * 0.4}px)`;
-          mainRef.current.style.boxShadow = `var(--primary) ${12 - moveX * 0.4}px ${12 - moveY * 0.4}px`;
-        }
+        if (!gridRef.current || !mainRef.current) return;
+        gridRef.current.style.transform = `translate(${-moveX}px, ${-moveY}px)`;
+        mainRef.current.style.transform = `translate(${8 + moveX * 0.4}px, ${8 + moveY * 0.4}px)`;
+        mainRef.current.style.boxShadow = `var(--primary) ${12 - moveX * 0.4}px ${12 - moveY * 0.4}px`;
       });
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-    };
+    document.addEventListener('mousemove', parallax);
   }, []);
 
   return (
