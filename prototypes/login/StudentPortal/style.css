@@ -1,0 +1,409 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background: linear-gradient(135deg, #e0f7fa, #80deea);
+}
+
+/* Color Variables */
+:root {
+    --primary: #AE152D;
+    --secondary: #CCA43B;
+    --tertiary: #E5E5E5;
+    --black: #1A1B25;
+    --white: #FFFFFF;
+}
+
+/* General Tags */
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    background: var(--black);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-logo .logo-img {
+    width: 50px;
+    height: auto;
+}
+.nav-logo .logo-text {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: bold;
+}
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav-menu .nav-link {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 500;
+}
+.logout {
+    background: var(--white);
+    color: var(--black);
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.logout:hover {
+    background: var(--secondary);
+    color: var(--black);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 175px;
+    height: 100vh;
+    background: var(--black);
+    position: fixed;
+    top: 60px;
+    left: 0;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+}
+.sidebar-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--white);
+    font-size: 12px;
+    transition: 0.3s;
+}
+.sidebar-menu li a:hover,
+.sidebar-menu li a.active {
+    background: var(--secondary);
+    color: var(--black);
+}
+.submenu {
+    display: none;
+    padding-left: 20px;
+    background: var(--tertiary);
+}
+.submenu li a {
+    font-size: 12px;
+    padding: 5px 20px;
+    display: block;
+    color: var(--black);
+    transition: 0.3s;
+}
+.submenu li a:hover {
+    background: var(--secondary);
+    color: var(--black);
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 200px;
+    text-align: center;
+}
+
+/* Profile */
+.profile-container {
+    max-width: 600px;
+    margin: 70px auto 30px auto;
+    background: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    padding: 30px;
+    position: relative;
+}
+.profile-container p {
+    margin: 10px 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+#semester-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Download Section */
+.download-container {
+    margin-left: 200px;
+    margin-top: 80px;
+    padding: 20px;
+    background: #e6f2f9;
+    margin-right: 100px;
+}
+.download-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+.download-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.download-card h3 {
+    margin-bottom: 10px;
+    color: #8B0000;
+}
+.download-card p {
+    margin-bottom: 15px;
+}
+.download-card button {
+    background-color: #AE152D;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.download-card button:hover {
+    background-color: #881020;
+}
+
+/* Announcements */
+.announcement-container {
+    max-width: 95%;
+    margin: 90px auto 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--primary);
+}
+.table-wrapper {
+    overflow-x: auto;
+}
+.announcement-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.announcement-table th,
+.announcement-table td {
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+.announcement-table th {
+    background-color: var(--secondary);
+    color: #fff;
+}
+.announcement-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.download-link {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+/* Subjects */
+.subject-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 80px;
+}
+.subject-card {
+    background: #f4f4f4;
+    padding: 15px;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px gray;
+    text-align: center;
+    transition: 0.3s;
+    flex: 1 1 250px;
+    max-width: 300px;
+}
+.subject-card h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.subject-card:hover {
+    transform: translateY(-5px);
+}
+.no-subject-msg {
+    font-size: 1.4rem;
+    color: var(--primary);
+    text-align: center;
+    margin: 40px auto;
+    font-weight: bold;
+}
+
+/* Course Table */
+.course-table-wrapper {
+    width: 100%;
+    margin: 40px auto 30px auto;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+.course-table-wrapper h3 {
+    margin-bottom: 15px;
+}
+.course-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.course-table th,
+.course-table td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+.course-table th {
+    background-color: var(--secondary);
+    color: #000;
+}
+.course-table td {
+    background-color: #f9f9f9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    /* HeaderNavbar */
+    header {
+        padding: 8px 12px;
+    }
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .nav-logo .logo-img {
+        width: 35px;
+    }
+    .nav-logo .logo-text {
+        font-size: 14px;
+    }
+    .nav-menu {
+        gap: 10px;
+    }
+    .nav-menu .nav-link {
+        font-size: 12px;
+    }
+    .logout {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 200px;
+        left: -200px;
+        top: 50px;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+
+    .main-content,
+    .download-container,
+    .announcement-container,
+    .profile-container,
+    .course-table-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .profile-container {
+        margin-top: 100px;
+        padding: 20px;
+    }
+
+    .subject-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subject-card {
+        width: 90%;
+    }
+
+    .announcement-table th,
+    .announcement-table td,
+    .course-table th,
+    .course-table td {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .download-card {
+        width: 100%;
+    }
+
+    .download-card h3 {
+        font-size: 16px;
+    }
+
+    .download-card p {
+        font-size: 14px;
+    }
+
+    .download-card button {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+}
