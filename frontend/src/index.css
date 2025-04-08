@@ -3,13 +3,16 @@
 
 :root {
   --primary: #AE152D;
-  --blue: #266DD3;
-  --green: #72B01D;
+  --blue: #2374AB;
+  --yellow: #E3B505;
   --black: #1A1B25;
   --white: #E5E5E5;
   --font-imp: "Jost";
-  --font-para: "Roboto Mono"
+  --font-para: "Roboto Mono";
+  --prim-soft: #e5dfdf;
+  --black-soft: #212230;
 }
+
 ::selection{
   background-color: var(--primary);
   color: var(--white);
@@ -30,7 +33,8 @@ body {
   justify-content: center;
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  background-color: var(--white);
 }
   
 /*PC Stuff*/

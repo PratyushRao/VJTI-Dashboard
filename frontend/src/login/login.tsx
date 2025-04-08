@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import './Login.css';
+import './login.css';
 
 function Login() {
   const [userType, setUserType] = useState<'student' | 'faculty'>('student');
@@ -62,6 +62,7 @@ function Login() {
 
   return (
     <div className="login-container">
+      <div id="bg-div"></div>
       <div id="parallax-grid" ref={gridRef}></div>
       <div id="main" ref={mainRef}>
         <div id="toggle">
@@ -85,7 +86,7 @@ function Login() {
         <div id="login">
           <input type="text" id="user" placeholder={placeholderText} value={username.trim()} onChange={(e) => setUsername(e.target.value)}/>
           <input type="password" id="password" placeholder="Password" value={password.trim()} onChange={(e) => setPassword(e.target.value)}/>
-          <button id="submit" onClick={() => submitData()} >CONTINUE</button>
+          <button id="submit" onClick={() => submitData()}>CONTINUE</button>
         </div>
       </div>
     </div>

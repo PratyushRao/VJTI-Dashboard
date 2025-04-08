@@ -1,0 +1,112 @@
+@import '../index.css';
+
+body {
+  background-color: var(--white);
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#main-head {
+  background-color: var(--black);
+  padding: 0.8rem 1.2rem;
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  height: 5rem;
+  margin-left: 2ch;
+  width: auto;
+}
+
+#user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  min-width: 20%;
+}
+
+#details {
+  margin-left: 2ch;
+  font-family: var(--font-para);
+  color: var(--white);
+  font-weight: 600;
+  padding-inline: 2ch;
+}
+
+#details > * {
+  margin: 0;
+  padding: 0;
+}
+
+#logout {
+  font-family: var(--font-imp);
+  background-color: var(--black-soft);
+  color: var(--white);
+  font-size: 1rem;
+  margin-right: 2ch;
+  padding: 10px 15px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+#logout:hover {
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+#navbar {
+  width: 100%;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nav-option {
+  font-family: var(--font-imp);
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: var(--black);
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  width: 20%;
+  border: 2px solid var(--black-soft);
+}
+
+.nav-option:hover {
+  cursor: pointer;
+  color: var(--yellow);
+  background: var(--black-soft);
+  transform: translate(0, -2px);
+  border: 2px solid var(--yellow);
+}
+
+.nav-option:active {
+  transform: translate(0, 0);
+  transition: 40ms ease-in-out;
+}

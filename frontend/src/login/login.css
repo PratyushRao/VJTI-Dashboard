@@ -4,6 +4,16 @@ body {
   background-color: var(--black);
 }
 
+#bg-div{
+  background-color: var(--black);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
 #parallax-grid {
   position: absolute;
   top: -20%;
@@ -14,8 +24,8 @@ body {
   transform: translate(-10%, -10%);
   background-size: 75px 75px;
   background-image:
-    linear-gradient(to right, #212230 1px, transparent 1px),
-    linear-gradient(to bottom, #212230 1px, transparent 1px);
+    linear-gradient(to right, var(--black-soft) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--black-soft) 1px, transparent 1px);
   transition: transform 0.1s ease;
   z-index: -1;
 }
@@ -66,7 +76,7 @@ input {
 }
 
 input:focus {
-  background-color: #e5dfdf
+  background-color: var(--prim-soft)
 }
 
 #submit {
