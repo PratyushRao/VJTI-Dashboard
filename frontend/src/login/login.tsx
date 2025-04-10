@@ -44,6 +44,7 @@ function Login() {
 
   const submitData = async () => {
     try {
+      sessionStorage.clear();
       const response = await fetch("http://localhost:8000/login", {
         method: "POST",
         headers: {
@@ -53,7 +54,16 @@ function Login() {
       });
 
       const data = await response.json();
-      alert(data.message);
+      if (!data.isValid) { 
+        alert(data.message);
+        return;
+      }
+      if (data.isValid) {
+        sessionStorage.setItem("user", JSON.stringify(data.user));
+        window.location.href = `/${userType}`;
+      }
+
+
     } catch (error) {
       alert("Invalid");
       console.error("Login error:", error);
@@ -86,7 +96,7 @@ function Login() {
         <div id="login">
           <input type="text" id="user" placeholder={placeholderText} value={username.trim()} onChange={(e) => setUsername(e.target.value)}/>
           <input type="password" id="password" placeholder="Password" value={password.trim()} onChange={(e) => setPassword(e.target.value)}/>
-          <button id="submit" onClick={() => submitData()}>CONTINUE</button>
+          <button id="submit" onClick={(e) => { e.preventDefault(); submitData(); }}>CONTINUE</button>
         </div>
       </div>
     </div>

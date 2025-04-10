@@ -59,5 +59,4 @@ export const handler = async (req: Request): Promise<Response> => {
     });
 };
 
-console.log('Server running on http://localhost:8000');
 serve(handler, { port: 8000 });

@@ -18,10 +18,25 @@ export async function validateUser(client, utype, uname, pass) {
 
   if (results.length > 0) return {
     status: 200,
-    data: {message: "okay"}
+    data: {
+      message: "Login Successful",
+      isValid: true,
+      user: {
+        name: results[0].NAME,
+        roll: results[0].REG_NO || results[0].username,
+        utype: utype
+        //dob: results[0].DateOfBirth,
+        //email: results[0].EmailAddress,
+        //year: results[0].YEAR,
+        //cgpa: results[0].CGPA
+      }
+    }
   }
   return {
     status: 401,
-    data: {message: "Invalid Credentials :/"}
+    data: {
+      message: "Invalid Credentials :/",
+      isValid: false
+    }
   }
 }
