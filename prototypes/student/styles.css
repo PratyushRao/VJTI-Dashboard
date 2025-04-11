@@ -1,0 +1,206 @@
+/*gets fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  --primary: #AE152D;
+  --blue: #2374AB;
+  --yellow: #E3B505;
+  --black: #1A1B25;
+  --white: #E5E5E5;
+  --font-imp: "Jost";
+  --font-para: "Roboto Mono";
+  --prim-soft: #e5dfdf;
+  --black-soft: #212230;
+}
+
+::selection{
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+#root {
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+body {
+  overflow-x: hidden;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+  
+/*PC Stuff*/
+
+/*Tablet responsiveness*/
+@media only screen and (max-device-width: 1025px){
+  :root{
+    font-size: 18px;
+  }
+}
+
+/*Mobile responsiveness*/
+@media only screen and (max-device-width: 450px){
+  :root{
+    font-size: 12px;
+  }
+}
+
+/*REMOVE EVERYTHING ABOVE THIS LINE IN FINAL, AND SIMPLY PUT @import '../index.css'; LIKE WE DID FOR THE LOGIN CSS FILE*/
+
+@import '../index.css';
+
+body {
+  background-color: var(--white);
+}
+
+header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#main-head {
+  background-color: var(--black);
+  padding: 0.8rem 1.2rem;
+  width: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  height: 3.6rem;
+  margin-left: 2ch;
+  width: auto;
+}
+
+#user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  min-width: 12.5%;
+}
+
+#details {
+  margin-left: 2ch;
+  font-family: var(--font-para);
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: right;
+  padding-inline: 2ch;
+}
+
+#details > * {
+  margin: 0;
+  padding: 0;
+}
+
+#logout {
+  font-family: var(--font-imp);
+  background-color: var(--black-soft);
+  color: var(--white);
+  font-size: 0.8rem;
+  margin-right: 2ch;
+  padding: 10px 15px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+#logout:hover {
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+#navbar {
+  width: 100%;
+  background-color: var(--black);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nav-option {
+  font-family: var(--font-imp);
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: var(--black);
+  margin: 0;
+  padding: 8px 0;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  width: 25%;
+  border: 2px solid var(--black-soft);
+}
+
+.nav-option:hover {
+  cursor: pointer;
+  color: var(--yellow);
+  background: var(--black-soft);
+  transform: translate(0, -2px);
+  border: 2px solid var(--yellow);
+}
+
+.nav-option:active {
+  transform: translate(0, 0);
+  transition: 40ms ease-in-out;
+}
+
+#main {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 2rem;
+  padding: 2rem;
+  background-image: linear-gradient(var(--white), var(--prim-soft));
+  min-height: 100vh;
+}
+
+.card {
+  background-color: var(--prim-soft);
+  border-bottom: 3px solid var(--primary);
+  border-radius: 6px;
+  box-shadow: 2px 2px 4px #2122303c;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+  width: 24vw;
+  margin: auto;
+}
+
+.subject-name{
+  font-size: 1.2rem;
+  color: var(--black);
+  font-family: var(--font-imp);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.subject-data{
+  font-size: 1.1rem;
+  color: var(--black);
+  font-family: var(--font-para);
+  font-weight: 600;
+}
+
+.subject-data > strong {
+  color: var(--black-soft);
+  font-weight: 700;
+}

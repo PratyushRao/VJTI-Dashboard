@@ -1,6 +1,7 @@
 import './student.css';
 import logo_img from './vjti-logo.webp'
 
+//comment out this if block to to debug page without login
 if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
   window.location.href = "./login";
 
@@ -13,8 +14,9 @@ const uRoll = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem
 
 export default function Student(){
   return(
+  <div className = "student-container">
   <header>
-    <div id = "main-head">
+    <div id = "student-main-head">
       <img src= {logo_img} alt="VJTI" id="logo"/>
       <div id = "user-info">
         <div id = "details">
@@ -30,11 +32,11 @@ export default function Student(){
     </div>
     <nav id = "navbar">
         <button className = "nav-option">Home</button>
-        <button className = "nav-option">Profile</button>
-        <button className = "nav-option">Academics</button>
+        <button className = "nav-option">Academic Reports</button>
         <button className = "nav-option">Downloads</button>
         <button className = "nav-option">Announcements</button>
     </nav>
   </header>
+  </div>
   )
 }

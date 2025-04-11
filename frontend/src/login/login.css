@@ -1,7 +1,14 @@
 @import '../index.css';
 
-body {
+.login-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  align-items: center;
   background-color: var(--black);
+  z-index: -4;
 }
 
 #bg-div{
@@ -11,7 +18,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -2;
+  z-index: -1;
 }
 
 #parallax-grid {
@@ -27,13 +34,13 @@ body {
     linear-gradient(to right, var(--black-soft) 1px, transparent 1px),
     linear-gradient(to bottom, var(--black-soft) 1px, transparent 1px);
   transition: transform 0.1s ease;
-  z-index: -1;
+  z-index: 0;
 }
 
 #main {
   margin: auto;
   padding: 2rem;
-  width: auto;
+  width: fit-content;
   max-width: 100vw;
   max-height: 100vh;
 
@@ -144,7 +151,7 @@ input:focus {
   #parallax-grid {
     display: none;
   }
-  body {
+  #root {
     background-size: 75px 75px;
     background-image:
     linear-gradient(to right, #212230 1px, transparent 1px),

@@ -19,22 +19,16 @@
 }
 
 #root {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
   height: 100vh;
   width: 100vw;
 }
 
 body {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
   width: 100vw;
   min-height: 100vh;
   background-color: var(--white);
+  overflow-x: hidden;
 }
   
 /*PC Stuff*/

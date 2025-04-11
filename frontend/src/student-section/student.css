@@ -1,7 +1,9 @@
 @import '../index.css';
 
-body {
+.student-container {
   background-color: var(--white);
+  width: 100vw;
+  height: 100vh;
 }
 
 header {
@@ -22,7 +24,7 @@ a {
   color: inherit;
 }
 
-#main-head {
+#student-main-head {
   background-color: var(--black);
   padding: 0.8rem 1.2rem;
   width: inherit;
@@ -32,7 +34,7 @@ a {
 }
 
 #logo {
-  height: 5rem;
+  height: 3.6rem;
   margin-left: 2ch;
   width: auto;
 }
@@ -42,14 +44,16 @@ a {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  min-width: 20%;
+  min-width: 12.5%;
 }
 
 #details {
   margin-left: 2ch;
   font-family: var(--font-para);
   color: var(--white);
+  font-size: 0.9rem;
   font-weight: 600;
+  text-align: right;
   padding-inline: 2ch;
 }
 
@@ -62,7 +66,7 @@ a {
   font-family: var(--font-imp);
   background-color: var(--black-soft);
   color: var(--white);
-  font-size: 1rem;
+  font-size: 0.8rem;
   margin-right: 2ch;
   padding: 10px 15px;
   font-weight: 600;
@@ -86,15 +90,15 @@ a {
 .nav-option {
   font-family: var(--font-imp);
   color: var(--white);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 500;
   background-color: var(--black);
   margin: 0;
-  padding: 10px 0;
+  padding: 8px 0;
   text-align: center;
   text-decoration: none;
   transition: 0.2s ease-in-out;
-  width: 20%;
+  width: 25%;
   border: 2px solid var(--black-soft);
 }
 
