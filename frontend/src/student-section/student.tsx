@@ -18,7 +18,7 @@ export default function Student(){
   <header>
     <div id = "student-main-head">
       <img src= {logo_img} alt="VJTI" id="logo"/>
-      <div id = "user-info">
+      <div id = "student-user-info">
         <div id = "details">
           <p>{uName}</p>
           <p>{uRoll}</p>

@@ -1,45 +1,27 @@
 @import "../index.css";
 
-#parallax {
+#faculty-parallax {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 150vw;
-  height: 100vh;
+  top: -5%;
+  left: -5%;
+  width: 110%;
+  height: 110%;
   overflow: hidden;
-  background-size: 75px 75px;
-  background-image:
-    linear-gradient(to right, #cdcdcd 1px, transparent 1px),
-    linear-gradient(to bottom, #cdcdcd 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-image: radial-gradient(var(--white-hard) 1px, transparent 0);
   z-index: 0;
 }
 
 .faculty-container {
   background-color: var(--white);
-  width: 100vw;
-  height: 100vh;
-}
-
-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
 }
 
 #faculty-main-head {
   background-color: var(--black);
+  border-bottom: 2px solid var(--primary);
   padding: 0.8rem 1.2rem;
   width: inherit;
   display: flex;
@@ -48,13 +30,7 @@ a {
   z-index: 10;
 }
 
-#logo {
-  height: 3.6rem;
-  margin-left: 2ch;
-  width: auto;
-}
-
-#user-info {
+#faculty-user-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,32 +45,15 @@ a {
   gap: 1.5rem;
 }
 
-#logout {
-  font-family: var(--font-imp);
-  background-color: var(--black-soft);
-  color: var(--white);
-  font-size: 0.8rem;
-  margin-right: 2ch;
-  padding: 10px 15px;
-  font-weight: 600;
-  transition: 0.2s ease-in-out;
-}
-
-#logout:hover {
-  cursor: pointer;
-  background-color: var(--primary);
-  color: var(--white);
-}
-
 .container {
-  width: 99.7vw;
-  min-height: 60vh;
-  left: 0;
-  margin-top: 5.1rem;
+  width: 100vw;
+  min-height: 80vh;
+  padding: 2rem;
+  margin: auto;
   display: flex;
-  overflow-y: auto;
-
-  padding-left: 15%;
+  justify-content: center;
+  align-self: center;
+  z-index: 3;
 }
 
 .title {
@@ -102,37 +61,36 @@ a {
   font-size: xx-large;
   font-weight: bold;
   font-family: "roboto mono", monospace;
-  padding-top: 0.5rem;
-  padding-bottom: 0.3rem;
-
+  font-weight: 700;
+  padding-bottom: 2rem;
 }
 
 .main-content {
-  position: absolute;
   display: flex;
   width: 70vw;
-  min-height: 60vh;
+  height: 80vh;
+  overflow-y: scroll;
+
   margin: auto;
-  
-  margin-top: 10vh;
-  box-shadow: 10px 10px var(--primary);
+  padding: 2rem;
+  box-shadow: 4px 4px var(--primary);
   border-radius: 10px;
   border: 2px solid var(--primary);
-  box-shadow: 5px 5px var(--primary);
   flex-direction: column;  
   background-color: var(--white);
-
+  z-index: 2;
 }
 
 .class-container {
   margin: auto;
   display: grid;
   width: 100%;
-  min-height: 60vh;
   grid-template-columns: 1fr 1fr;
+  gap: 2rem;
   align-items: center;
   justify-items: center;
 }
+
 .classes {
   width: 25vw;
   height: 25vh;
@@ -140,9 +98,9 @@ a {
   border-radius: 10px;
   text-align: center;
   font-family: var(--font-para);
+  font-weight: 500;
   
   box-shadow: 2px 2px var(--primary);
-  margin: 10px;
   align-content: center;
   font-size:x-large;
 }
