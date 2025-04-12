@@ -9,6 +9,7 @@ const uName = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem
 export default function Faculty(){
     return(
     <div className = "faculty-container">
+      <div id='parallax'></div>
     <header>
       <div id = "faculty-main-head">
         <img src= {logo_img} alt="VJTI" id="logo"/>
@@ -21,8 +22,27 @@ export default function Faculty(){
           }}>LOG OUT</a>
         </div>
       </div>
-      
     </header>
+
+    <div className="container">
+
+    <div className="main-content">
+
+      
+    <div className='title'>Your Classes</div>
+    <div className="class-container">
+      <div className="classes">Maths</div>
+      <div className="classes">Chemistry</div>
+      
+      
+    </div>
+    </div>
+    </div>
+
+
+
+
+
     </div>
     )
   }
