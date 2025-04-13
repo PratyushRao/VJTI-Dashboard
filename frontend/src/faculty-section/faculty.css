@@ -128,10 +128,11 @@ a {
   margin: auto;
   display: grid;
   width: 100%;
-  min-height: 60vh;
+  min-height: 50vh;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items:start;
   justify-items: center;
+  padding-top: 5%;
 }
 .classes {
   width: 25vw;
@@ -140,9 +141,29 @@ a {
   border-radius: 10px;
   text-align: center;
   font-family: var(--font-para);
-  
-  box-shadow: 2px 2px var(--primary);
+  cursor: pointer;
+  box-shadow: 4px 4px var(--primary);
   margin: 10px;
   align-content: center;
   font-size:x-large;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  justify-content: center;
+  align-items: center ;
+}
+
+
+.classes:hover{
+  box-shadow: 2px 2px var(--primary);
+  transform: translate(2px,2px);
+}
+
+.subject{
+  font-size: x-large;
+  height: 40%;
+}
+.year{
+  font-size: small;
+
 }

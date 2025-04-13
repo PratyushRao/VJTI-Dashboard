@@ -28,7 +28,7 @@ body {
   width: 100vw;
   min-height: 100vh;
   background-color: var(--white);
-  overflow-x: hidden;
+  overflow: hidden;
 }
   
 /*PC Stuff*/

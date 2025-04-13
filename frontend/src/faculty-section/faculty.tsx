@@ -31,8 +31,8 @@ export default function Faculty(){
       
     <div className='title'>Your Classes</div>
     <div className="class-container">
-      <div className="classes">Maths</div>
-      <div className="classes">Chemistry</div>
+      <div className="classes">
+        <div className="subject">Physics</div><div className="year">FY BTech ExTC</div></div>
       
       
     </div>
