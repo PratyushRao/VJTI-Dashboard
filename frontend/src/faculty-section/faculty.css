@@ -8,7 +8,7 @@
   height: 110%;
   overflow: hidden;
   background-size: 40px 40px;
-  background-image: radial-gradient(var(--white-hard) 1px, transparent 0);
+  background-image: radial-gradient(var(--white-hard) 1.5px, transparent 0);
   z-index: 0;
 }
 
@@ -68,7 +68,7 @@
 .main-content {
   display: flex;
   width: 70vw;
-  height: 80vh;
+  height: 78vh;
   overflow-y: scroll;
 
   margin: auto;
@@ -101,7 +101,7 @@
   font-family: var(--font-para);
   font-weight: 500;
   
-  box-shadow: 2px 2px var(--primary);
+  box-shadow: 4px 4px var(--primary);
   align-content: center;
   font-size:x-large;
   display: flex;
