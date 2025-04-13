@@ -62,7 +62,10 @@
   font-weight: bold;
   font-family: "roboto mono", monospace;
   font-weight: 700;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+  width: 65%;
+  margin: auto;
 }
 
 .main-content {
@@ -70,7 +73,6 @@
   width: 70vw;
   height: 78vh;
   overflow-y: scroll;
-
   margin: auto;
   padding: 2rem;
   box-shadow: 4px 4px var(--primary);
