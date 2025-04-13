@@ -11,6 +11,7 @@
   --font-para: "Roboto Mono";
   --prim-soft: #e5dfdf;
   --black-soft: #212230;
+  --white-hard: #d3cdcd;
 }
 
 ::selection{
@@ -18,19 +19,66 @@
   color: var(--white);
 }
 
-#root {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root, html {
   height: 100vh;
   width: 100vw;
+  padding: 0;
+  margin: 0;
 }
 
 body {
   margin: 0;
+  padding: 0;
   width: 100vw;
   min-height: 100vh;
   background-color: var(--white);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
   
+header {
+  width: 100%;
+  z-index: 5;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#logout {
+  font-family: var(--font-imp);
+  background-color: var(--black-soft);
+  color: var(--white);
+  font-size: 0.8rem;
+  margin-right: 2ch;
+  padding: 10px 15px;
+  font-weight: 600;
+  transition: 0.2s ease-in-out;
+}
+
+#logout:hover {
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--white);
+}
+
+#logo {
+  height: 3.6rem;
+  width: auto;
+}
+
 /*PC Stuff*/
 
 /*Tablet responsiveness*/

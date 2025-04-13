@@ -72,9 +72,8 @@ function Login() {
 
   return (
     <div className="login-container">
-      <div id="bg-div"></div>
       <div id="parallax-grid" ref={gridRef}></div>
-      <div id="main" ref={mainRef}>
+      <div id="main-login" ref={mainRef}>
         <div id="toggle">
           <button
             className={userType === 'student' ? 'active' : 'inactive'}
