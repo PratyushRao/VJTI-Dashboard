@@ -7,7 +7,7 @@ const client = await new Client().connect({
     hostname: "localhost",
     username: "root",
     db: "dti",
-    password: "12345678",
+    password: "Pratyush",
 });
 
 const corsHeaders = {

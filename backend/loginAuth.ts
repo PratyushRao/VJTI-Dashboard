@@ -1,22 +1,52 @@
+async function getSubjectList(client, uname, pass) {
+  const subjectList = await client.query(
+    `SELECT SUBJECTS, NAME FROM faculty WHERE username = ? AND password = ?`,
+    [uname, pass]
+  );
+
+  if (!subjectList.length) return {};
+
+  const classes = subjectList[0].SUBJECTS.split('|');
+  const fUser = subjectList[0].NAME;
+  const classData = {};
+
+  for (const clas of classes) {
+    const subRes = await client.query(
+      `SELECT * FROM ${clas} WHERE FACULTY = ?`,
+      [fUser]
+    );
+
+    if (subRes.length > 0) {
+      const branch = subRes[0].BRANCH;
+      const sem = subRes[0].SEM;
+      classData[clas] = [branch, sem];
+    }
+  }
+
+  return classData;
+}
+
+
+
 export async function validateUser(client, utype, uname, pass) {
   let results;
-  
-  switch(utype){
+
+  switch (utype) {
     case 'student':
       results = await client.query(
         `SELECT * FROM students WHERE REG_NO = ? AND password = ?`,
         [uname, pass]
-    );
-    break;
+      );
+      break;
     case 'faculty':
       results = await client.query(
         `SELECT * FROM faculty WHERE username = ? AND password = ?`,
         [uname, pass]
-    );
-    break;
+      );
+      break;
   }
-
-  if (results.length > 0) return {
+  
+  if (results.length > 0 && utype === 'student') return {
     status: 200,
     data: {
       message: "Login Successful",
@@ -32,6 +62,21 @@ export async function validateUser(client, utype, uname, pass) {
       }
     }
   }
+  else if (results.length > 0 && utype === 'faculty') {
+    
+    const classData = await getSubjectList(client, uname, pass);
+
+  return {
+      status: 200,
+      data: {
+        message: "Login Successful",
+        isValid: true,
+        user: {
+          name: results[0].NAME,
+          utype: utype,
+          classData: classData
+    }
+  }}} 
   return {
     status: 401,
     data: {
