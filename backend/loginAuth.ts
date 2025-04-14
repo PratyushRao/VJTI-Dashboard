@@ -45,13 +45,7 @@ export async function validateUser(client, utype, uname, pass) {
       );
       break;
   }
-  let classData={};
-  if (results.length > 0 && utype === 'faculty'){
-    classData=await getSubjectList(client, uname, pass);
-  }
-
-
-
+  
   if (results.length > 0 && utype === 'student') return {
     status: 200,
     data: {
