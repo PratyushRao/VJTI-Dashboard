@@ -57,6 +57,8 @@
   z-index: 3;
 }
 
+
+
 .title {
   text-align: center;
   font-size: xx-large;
@@ -92,8 +94,7 @@
   width: 100%;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  align-items: start;
-  justify-items: center;
+  justify-content: center;
   padding-top: 5%;
 }
 
@@ -128,5 +129,77 @@
 }
 .year{
   font-size: small;
+}
 
+table{
+  width: 90%;
+  margin:5%;
+  font-family: "roboto mono", monospace;
+  border-spacing: 0;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  box-shadow: 4px 4px var(--primary);
+  padding:0.5rem;
+}
+
+thead{
+  
+  border-radius: 2px;
+  border-radius: 4px;
+  margin: 0;
+  height: 2rem;
+  font-size: large;
+}
+
+tr,th,td{
+  padding: 0.5rem;
+  height: 1.5rem;
+  text-align: center;
+}
+
+.subject-main-content{
+  display: flex;
+  width: 70vw;
+  height: 78vh;
+  overflow-y: scroll;
+  margin: auto;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-shadow: 4px 4px var(--primary);
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  flex-direction: column;  
+  background-color: var(--white);
+  z-index: 2;
+  align-items: center;
+  gap: 5%
+}
+
+.subject-title {
+  text-align: center;
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: "roboto mono", monospace;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+  width: 65%;
+}
+.subject-details{
+  text-align: left;
+  justify-content: start;
+  align-self: self-start;
+  width:80%;
+  font-family: "roboto mono", monospace;
+}
+
+.branch, .sem{
+  align-items: start;
+  text-align: left;
+  justify-content: start;
+  font-size: medium;
+  font-weight: 500;
+  margin-left: 8%;
+  font-size: large;
 }

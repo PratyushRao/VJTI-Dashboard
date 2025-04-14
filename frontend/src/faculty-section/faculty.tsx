@@ -2,6 +2,7 @@ import './faculty.css';
 import logo_img from './vjti-logo.webp';
 import { useEffect, useRef } from 'react';
 import MainContent from './components/mainContent';
+import Students from './components/class'; 
 
 if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
   window.location.href = "./login";
@@ -52,8 +53,9 @@ export default function Faculty() {
       </header>
 
       <div className="container">
-      <MainContent/>
-      </div>
+        {/* <MainContent /> */}
+        <Students /> 
+        </div>
     </div>
   )
 }
