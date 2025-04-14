@@ -72,6 +72,7 @@ function Login() {
 
   return (
     <div className="login-container">
+      <title>VJTI Dashboard Login</title>
       <div id="parallax-grid" ref={gridRef}></div>
       <div id="main-login" ref={mainRef}>
         <div id="toggle">

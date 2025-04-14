@@ -22,7 +22,7 @@ export default function Faculty(){
     
           requestAnimationFrame(() => {
             if (gridRef.current)
-              gridRef.current.style.transform = `translate(${-moveX * 0.4}px, ${-moveY * 0.4}px)`;
+              gridRef.current.style.transform = `translate(${-moveX * 0.8}px, ${-moveY * 0.8}px)`;
           });
         };
     
@@ -36,6 +36,7 @@ export default function Faculty(){
 
     return(
     <div className = "faculty-container">
+    <title>VJTI Faculty Dashboard</title>
     <div id="faculty-parallax" ref = {gridRef}></div>
     <header>
       <div id = "faculty-main-head">
