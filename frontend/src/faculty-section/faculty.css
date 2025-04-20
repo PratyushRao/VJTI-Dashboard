@@ -96,6 +96,7 @@
   gap: 2rem;
   justify-content: center;
   padding-top: 5%;
+  padding-left: 5%;
 }
 
 .classes {
@@ -202,4 +203,10 @@ tr,th,td{
   font-weight: 500;
   margin-left: 8%;
   font-size: large;
+}
+.back{
+  width: 16%;
+  position: fixed;
+  left: 18%;
+  transition: ease-in-out;
 }

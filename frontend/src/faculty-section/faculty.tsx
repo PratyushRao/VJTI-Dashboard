@@ -1,8 +1,21 @@
 import './faculty.css';
 import logo_img from './vjti-logo.webp';
-import { useEffect, useRef } from 'react';
+import { useEffect,useState, useRef } from 'react';
 import MainContent from './components/mainContent';
 import Students from './components/class'; 
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    'lord-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+      src?: string;
+      trigger?: string;
+      colors?: string;
+      state?: string;
+      style?: React.CSSProperties;
+      [key: string]: any;
+    };
+  }
+}
 
 if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
   window.location.href = "./login";
@@ -11,6 +24,8 @@ const uName = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem
 
 export default function Faculty() {
   const gridRef = useRef<HTMLDivElement>(null);
+  const [page,setPage] = useState<"main"|"student">("student")
+
   const maxMovement = 16;
 
   // Parallax effect
@@ -53,8 +68,8 @@ export default function Faculty() {
       </header>
 
       <div className="container">
-        {/* <MainContent /> */}
-        <Students /> 
+        {page==="main" && <MainContent />}
+        {page==="student" && <Students />}
         </div>
     </div>
   )
