@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { Client } from "https://deno.land/x/mysql@v2.12.0/mod.ts";
 import { validateUser } from "./loginAuth.ts";
+import { getStudents } from "./subjectDetails.ts";
 
 //MySQL db connection
 const client = await new Client().connect({
@@ -26,13 +27,13 @@ export const handler = async (req: Request): Promise<Response> => {
 
     if (req.method === 'POST' && new URL(req.url).pathname === '/login') {
         try {
-          const { userType, username, password } = await req.json()
-            
+            const { userType, username, password } = await req.json()
+
             const authResult = await validateUser(client, userType, username, password);
-            
+
             const headers = new Headers(corsHeaders);
             headers.set('Content-Type', 'application/json');
-            
+
             //return authentication result
             return new Response(JSON.stringify(authResult.data), {
                 headers,
@@ -42,9 +43,37 @@ export const handler = async (req: Request): Promise<Response> => {
             const headers = new Headers(corsHeaders);
             headers.set('Content-Type', 'application/json');
 
-            return new Response(JSON.stringify({ 
-                message: "Login Failed", 
+            return new Response(JSON.stringify({
+                message: "Login Failed",
                 error: "Check your password or username"
+            }), {
+                headers,
+                status: 500
+            });
+        }
+    }
+
+    if (req.method === 'POST' && new URL(req.url).pathname === '/faculty') {
+        try {
+            const { user, sub } = await req.json();
+
+            const studentList = await getStudents(client, user, sub);
+
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            //return authentication result
+            return new Response(JSON.stringify(studentList.data), {
+                headers,
+                status: studentList.status
+            });
+        } catch (error) {
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            return new Response(JSON.stringify({
+                message: "Failed to collect student's data",
+                error: "Invalid Request"
             }), {
                 headers,
                 status: 500

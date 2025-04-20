@@ -4,18 +4,6 @@ import { useEffect,useState, useRef } from 'react';
 import MainContent from './components/mainContent';
 import Students from './components/class'; 
 
-declare namespace JSX {
-  interface IntrinsicElements {
-    'lord-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
-      src?: string;
-      trigger?: string;
-      colors?: string;
-      state?: string;
-      style?: React.CSSProperties;
-      [key: string]: any;
-    };
-  }
-}
 
 if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
   window.location.href = "./login";
@@ -24,7 +12,7 @@ const uName = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem
 
 export default function Faculty() {
   const gridRef = useRef<HTMLDivElement>(null);
-  const [page,setPage] = useState<"main"|"student">("student")
+  const [page,setPage] = useState<"main"|"student">("main")
 
   const maxMovement = 16;
 
