@@ -2,6 +2,8 @@ import "./student.css";
 import logo_img from "./vjti-logo.webp";
 import { useEffect, useRef } from "react";
 
+import Profile from "./sub-sections/profile";
+
 //comment out this if block to to debug page without login
 if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
   window.location.href = "./login";
@@ -74,6 +76,9 @@ export default function Student() {
           <button className="nav-option">Announcements</button>
         </nav>
       </header>
+      <main id = "student-main-content">
+        <Profile />
+      </main>
     </div>
   );
 }
