@@ -34,7 +34,7 @@ export default function Students() {
     src="https://cdn.lordicon.com/vduvxizq.json"
     trigger="hover"
     colors="primary:#ae152d"
-    style={{width:'40px',height:'50px',"rotate":"180deg","cursor":"pointer"}}>
+    style={{width:'2.5rem',height:'2.5rem',"rotate":"180deg","cursor":"pointer"}}>
 </lord-icon></div>
     <div className="subject-title" >{sub}</div>
     <div className="subject-details">
