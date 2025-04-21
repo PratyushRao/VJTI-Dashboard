@@ -11,9 +11,23 @@ declare namespace JSX {
   }
 }
 
+type Student = {
+  REG_NO: number;
+  NAME: string;
+  GRADE: string;
+  FACULTY: string;
+  BRANCH: string;
+  SEM: number;
+  Attendance: string;
+};
+
+const students= sessionStorage.getItem("subject") ? JSON.parse(sessionStorage.getItem("subject") || "") : [];
+const sub = sessionStorage.getItem("sub") ? JSON.parse(sessionStorage.getItem("sub") || "") : "";
+
+
 export default function Students() {
 
-
+  
   
   return <div className="subject-main-content">
     <div className="back" ><lord-icon
@@ -22,7 +36,7 @@ export default function Students() {
     colors="primary:#ae152d"
     style={{width:'40px',height:'50px',"rotate":"180deg","cursor":"pointer"}}>
 </lord-icon></div>
-    <div className="subject-title" >CHEM</div>
+    <div className="subject-title" >{sub}</div>
     <div className="subject-details">
       <div className="branch">Branch: ExTC</div>
       <div className="sem">Sem: 2</div>
@@ -39,11 +53,11 @@ export default function Students() {
       </thead>
       <tbody>
 
-      {
-        <tr className='table-row'>
-          <td className='td-elements' >211090004 </td>
-          <td className='td-elements' >Sanya Patel</td>
-          <td className='td-elements' > BC<lord-icon
+      {students.map((item)=>
+        <tr className='table-row' key={item.REG_NO}>
+          <td className='td-elements' >{item.REG_NO} </td>
+          <td className='td-elements' >{item.NAME}</td>
+          <td className='td-elements' > {item.GRADE}<lord-icon
             src="https://cdn.lordicon.com/iubtdgvu.json"
             trigger="hover"
             stroke="bold"
@@ -56,7 +70,7 @@ export default function Students() {
             stroke="bold"
             colors="primary:#1a1b25,secondary:#ae152d"
             style={{ width: "25px", height: "25px", "padding-top": "6px" }}>
-          </lord-icon> 16 <lord-icon
+          </lord-icon> {item.Attendance} <lord-icon
             src="https://cdn.lordicon.com/mfdeeuho.json"
             trigger="hover"
             stroke="bold"
@@ -65,6 +79,7 @@ export default function Students() {
             </lord-icon></td>
         </tr>
 
+)
 }
 
         

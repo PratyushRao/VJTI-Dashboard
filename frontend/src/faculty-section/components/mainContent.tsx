@@ -7,6 +7,7 @@ export default function MainContent() {
     const RequestData = async (sub: string) => {
         try {
             sessionStorage.getItem("subject") && sessionStorage.removeItem("subject");
+            sessionStorage.getItem("sub") && sessionStorage.removeItem("sub");
             const response = await fetch("http://localhost:8000/faculty", {
                 method: "POST",
                 headers: {
@@ -16,7 +17,9 @@ export default function MainContent() {
             });
 
             const data = await response.json();
-            sessionStorage.setItem("subject", JSON.stringify(data.user));
+            sessionStorage.setItem("subject", JSON.stringify(data.subjects));
+            sessionStorage.setItem("sub", JSON.stringify(data.sub));
+
             // window.location.href = `/${userType}`;
 
 

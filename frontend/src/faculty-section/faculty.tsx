@@ -12,7 +12,7 @@ const uName = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem
 
 export default function Faculty() {
   const gridRef = useRef<HTMLDivElement>(null);
-  const [page,setPage] = useState<"main"|"student">("main")
+  const [page,setPage] = useState<"main"|"student">("student")
 
   const maxMovement = 16;
 

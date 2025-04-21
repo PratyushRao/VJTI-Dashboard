@@ -8,7 +8,8 @@ export async function getStudents(client, user, sub) {
         status: 200,
         data: {
             message: "Successful",
-            user: results
+            subjects: results,
+            sub: sub
         }
     }
 
