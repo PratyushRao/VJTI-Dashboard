@@ -27,7 +27,10 @@ const sub = sessionStorage.getItem("sub") ? JSON.parse(sessionStorage.getItem("s
 
 export default function Students() {
 
+  const addAtt = async (sub: string, reg:number, name:string) =>{}
   
+
+  const subtractAtt = async (sub: string, reg:number, name:string) =>{}
   
   return <div className="subject-main-content">
     <div className="back" ><lord-icon
@@ -64,13 +67,13 @@ export default function Students() {
             colors="primary:#1a1b25,secondary:#ae152d"
             style={{ width: "25px", height: "25px", "padding-top": "6px" }}>
           </lord-icon></td>
-          <td className='td-elements' ><lord-icon
+          <td className='td-elements' ><lord-icon onClick={(e) => { e.preventDefault(); subtractAtt(sub,item.REG_NO,item.NAME); }}
             src="https://cdn.lordicon.com/xcrmpfbb.json"
             trigger="hover"
             stroke="bold"
             colors="primary:#1a1b25,secondary:#ae152d"
             style={{ width: "25px", height: "25px", "padding-top": "6px" }}>
-          </lord-icon> {item.Attendance} <lord-icon
+          </lord-icon> {item.Attendance} <lord-icon onClick={(e) => { e.preventDefault(); addAtt(sub,item.REG_NO,item.NAME); }}
             src="https://cdn.lordicon.com/mfdeeuho.json"
             trigger="hover"
             stroke="bold"
