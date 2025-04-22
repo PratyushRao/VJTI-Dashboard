@@ -11,16 +11,6 @@ declare namespace JSX {
   }
 }
 
-type Student = {
-  REG_NO: number;
-  NAME: string;
-  GRADE: string;
-  FACULTY: string;
-  BRANCH: string;
-  SEM: number;
-  Attendance: string;
-};
-
 const students= sessionStorage.getItem("subject") ? JSON.parse(sessionStorage.getItem("subject") || "") : [];
 const sub = sessionStorage.getItem("sub") ? JSON.parse(sessionStorage.getItem("sub") || "") : "";
 
