@@ -20,7 +20,6 @@ export default function MainContent() {
             sessionStorage.setItem("subject", JSON.stringify(data.subjects));
             sessionStorage.setItem("sub", JSON.stringify(data.sub));
 
-            // window.location.href = `/${userType}`;
 
 
         } catch (error) {

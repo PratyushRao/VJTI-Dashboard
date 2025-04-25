@@ -134,7 +134,7 @@
 
 table{
   width: 90%;
-  margin:5%;
+  margin:2%;
   font-family: "roboto mono", monospace;
   border-spacing: 0;
   border: 2px solid var(--primary);
@@ -209,4 +209,8 @@ tr,th,td{
   position: fixed;
   left: 18%;
   transition: ease-in-out;
+}
+
+lord-icon{
+  cursor: pointer;
 }
