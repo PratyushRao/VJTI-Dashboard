@@ -19,7 +19,7 @@ export default function MainContent() {
             const data = await response.json();
             sessionStorage.setItem("subject", JSON.stringify(data.subjects));
             sessionStorage.setItem("sub", JSON.stringify(data.sub));
-
+            window.location.href = `/subject`;
 
 
         } catch (error) {

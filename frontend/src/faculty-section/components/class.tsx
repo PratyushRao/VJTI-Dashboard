@@ -23,6 +23,13 @@ export default function Students() {
     setStudents(storedStudents);
   }, []);
 
+  const back= async()=>{
+    sessionStorage.getItem("sub") && sessionStorage.removeItem("sub");
+    sessionStorage.getItem("subject") && sessionStorage.removeItem("subject");
+    window.location.href = `/faculty`;
+
+  }
+
 
   const addAtt = async (sub: string, reg: number, name: string) => {
     try {
@@ -56,8 +63,6 @@ export default function Students() {
     }
   };
 
-
-
   const subtractAtt = async (sub: string, reg: number, name: string) => {
 
     try {
@@ -83,8 +88,7 @@ export default function Students() {
 
 
       setStudents(updatedDetails);
-      sessionStorage.setItem("subject", JSON.stringify(updatedDetails))
-
+      sessionStorage.setItem("subject", JSON.stringify(updatedDetails));
 
     } catch (error) {
       alert("Invalid");
@@ -93,7 +97,7 @@ export default function Students() {
   }
 
   return <div className="subject-main-content">
-    <div className="back" ><lord-icon
+    <div className="back" ><lord-icon onClick={(e) => { e.preventDefault(); back(); }}
       src="https://cdn.lordicon.com/vduvxizq.json"
       trigger="hover"
       colors="primary:#ae152d"

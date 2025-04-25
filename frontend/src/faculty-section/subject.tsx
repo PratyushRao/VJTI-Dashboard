@@ -1,15 +1,16 @@
 import './faculty.css';
 import logo_img from './vjti-logo.webp';
 import { useEffect, useRef } from 'react';
-import MainContent from './components/mainContent';
 import Students from './components/class'; 
 
 if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
   window.location.href = "./login";
+if (!sessionStorage.getItem("subject") && window.location.pathname != "/faculty")
+    window.location.href = "./faculty";
 
 const uName = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").name : "User";
 
-export default function Faculty() {
+export default function Subject() {
   const gridRef = useRef<HTMLDivElement>(null);
 
   const maxMovement = 16;
@@ -54,8 +55,7 @@ export default function Faculty() {
       </header>
 
       <div className="container">
-        <MainContent />
-        {/* <Students /> */}
+        <Students />
         </div>
     </div>
   )

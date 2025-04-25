@@ -2,6 +2,7 @@ import {Routes, Route, Navigate} from 'react-router-dom';
 import Login from './login/login.tsx';
 import Student from './student-section/student.tsx';
 import Faculty from './faculty-section/faculty.tsx';
+import Subject from './faculty-section/subject.tsx';
 import './index.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/student" element={<Student />} />
         <Route path="/faculty" element={<Faculty />} />
+        <Route path="/subject" element={<Subject />} />
         {/*add other routes here*/}
       </Routes>
   );
