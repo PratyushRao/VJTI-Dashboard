@@ -15,7 +15,7 @@ declare namespace JSX {
 
 
 const sub = sessionStorage.getItem("sub") ? JSON.parse(sessionStorage.getItem("sub") || "") : "";
-
+const subject = sessionStorage.getItem("subject") ? JSON.parse(sessionStorage.getItem("subject") || "") : "";
 export default function Students() {
   const [students, setStudents] = useState<[]>([]);
   useEffect(() => {
@@ -105,8 +105,8 @@ export default function Students() {
     </lord-icon></div>
     <div className="subject-title" >{sub}</div>
     <div className="subject-details">
-      <div className="branch">Branch: ExTC</div>
-      <div className="sem">Sem: 2</div>
+      <div className="branch">Branch: {subject[0].BRANCH}</div>
+      <div className="sem">Sem: {subject[0].SEM}</div>
     </div>
     <table className='student-table'>
       <thead className='table-header'>
