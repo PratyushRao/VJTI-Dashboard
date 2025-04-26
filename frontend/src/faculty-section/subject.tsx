@@ -1,12 +1,8 @@
 import './faculty.css';
 import logo_img from './vjti-logo.webp';
 import { useEffect, useRef } from 'react';
-import Students from './components/class'; 
+import Students from './components/class';
 
-if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
-  window.location.href = "./login";
-if (!sessionStorage.getItem("subject") && window.location.pathname != "/faculty")
-    window.location.href = "./faculty";
 
 const uName = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").name : "User";
 
@@ -56,7 +52,7 @@ export default function Subject() {
 
       <div className="container">
         <Students />
-        </div>
+      </div>
     </div>
   )
 }
