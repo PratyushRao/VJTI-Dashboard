@@ -70,6 +70,11 @@ function Login() {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      submitData();
+    }
+  };
   return (
     <div className="login-container">
       <title>VJTI Dashboard Login</title>
@@ -95,7 +100,7 @@ function Login() {
         <h1>SIGN IN</h1>
         <div id="login">
           <input type="text" id="user" placeholder={placeholderText} value={username.trim()} onChange={(e) => setUsername(e.target.value)}/>
-          <input type="password" id="password" placeholder="Password" value={password.trim()} onChange={(e) => setPassword(e.target.value)}/>
+          <input type="password" id="password" placeholder="Password" value={password.trim()} onKeyDown={handleKeyDown} onChange={(e) => setPassword(e.target.value)}/>
           <button id="submit" onClick={(e) => { e.preventDefault(); submitData(); }}>CONTINUE</button>
         </div>
       </div>
