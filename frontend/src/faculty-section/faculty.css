@@ -144,8 +144,6 @@ table{
 }
 
 thead{
-  
-  border-radius: 2px;
   border-radius: 4px;
   margin: 0;
   height: 2rem;
@@ -165,8 +163,7 @@ tr,th,td{
   overflow-y: scroll;
   margin: auto;
   padding: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-inline: 2rem;
   box-shadow: 4px 4px var(--primary);
   border-radius: 10px;
   border: 2px solid var(--primary);

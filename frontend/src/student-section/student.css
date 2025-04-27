@@ -7,15 +7,19 @@
   width: 110%;
   height: 110%;
   overflow: hidden;
-  background-size: 40px 40px;
+  background-size: 32px 32px;
   background-image: radial-gradient(var(--white-hard) 1px, transparent 0);
   z-index: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .student-container {
   background-color: var(--white);
   width: 100vw;
   height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 #student-main-head {
@@ -86,4 +90,21 @@
 .nav-option:active {
   transform: translate(0, 0);
   transition: 40ms ease-in-out;
+}
+
+#student-main-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 5vh;
+  width: 94%;
+  height: 72%;
+  background-color: var(--white);
+  z-index: 1;
+  position: relative;
+  box-shadow: 4px 4px var(--primary);
+  border-radius: 10px;
+  border: 2px solid var(--primary);
 }

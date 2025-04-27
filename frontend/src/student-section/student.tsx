@@ -1,6 +1,6 @@
 import "./student.css";
 import logo_img from "./vjti-logo.webp";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import Profile from "./sub-sections/profile";
 
@@ -18,6 +18,8 @@ const uRoll = sessionStorage.getItem("user")
 //const uBranch = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").branch : "Branch";
 //const uCGPA = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").cgpa : "CGPA";
 //const uDoB = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").dob : "DoB";
+
+const [activeSection, setActiveSection] = useState("Home")
 
 export default function Student() {
   const gridRef = useRef<HTMLDivElement>(null);
@@ -70,15 +72,23 @@ export default function Student() {
           </div>
         </div>
         <nav id="navbar">
-          <button className="nav-option">Home</button>
-          <button className="nav-option">Academic Reports</button>
-          <button className="nav-option">Downloads</button>
-          <button className="nav-option">Announcements</button>
+          <button className="nav-option" onClick = {() => setActiveSection("Home")}>
+            Home
+          </button>
+          <button className="nav-option" onClick = {() => setActiveSection("Academic Reports")}>
+            Academic Reports
+          </button>
+          <button className="nav-option" onClick = {() => setActiveSection("Downloads")}>
+            Downloads
+          </button>
+          <button className="nav-option" onClick = {() => setActiveSection("Announcements")}>
+            Announcements
+          </button>
         </nav>
       </header>
-      <main id = "student-main-content">
-        <Profile />
-      </main>
+      <div id = "student-main-body">
+              {/*Display a div depending on the selected menu button here*/}
+      </div>
     </div>
   );
 }
