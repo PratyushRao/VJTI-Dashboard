@@ -70,8 +70,8 @@ function Login() {
     }
   };
 
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") {
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
       submitData();
     }
   };
