@@ -1,14 +1,14 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { Client } from "https://deno.land/x/mysql@v2.12.0/mod.ts";
 import { validateUser } from "./loginAuth.ts";
-import { getStudents, addAtt, subAtt } from "./subjectDetails.ts";
+import { getStudents, addAtt, subAtt, changeGrade } from "./subjectDetails.ts";
 
 //MySQL db connection
 const client = await new Client().connect({
     hostname: "localhost",
     username: "root",
     db: "dti",
-    password: "12345678"
+    password: "Pratyush"
 });
 
 const corsHeaders = {
@@ -137,7 +137,32 @@ export const handler = async (req: Request): Promise<Response> => {
             });
         }
     }
+    if (req.method === 'POST' && new URL(req.url).pathname === '/changeGrade') {
+        try {
+            const {sub, reg, name, grade } = await req.json();
 
+            const Gr = await changeGrade(client, sub, reg, name, grade);
+
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            return new Response(JSON.stringify(Gr.data), {
+                headers,
+                status: Gr.status
+            });
+        } catch (error) {
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            return new Response(JSON.stringify({
+                message: "Failed to collect student's data",
+                error: "Invalid Request"
+            }), {
+                headers,
+                status: 500
+            });
+        }
+    }
 
 
 

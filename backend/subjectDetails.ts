@@ -48,3 +48,20 @@ export async function subAtt(client, sub, reg, name){
         }
     }
 }
+
+export async function changeGrade(client, sub, reg, name, grade){
+    await client.query(
+        `UPDATE ?? SET GRADE=? WHERE REG_NO=? AND NAME=?`, [sub.replaceAll(" ","_"),grade, reg, name]
+    );
+    let res = await client.query(
+        `SELECT GRADE FROM ?? WHERE REG_NO=? AND NAME=?`, [sub.replaceAll(" ","_"), reg,name]
+    )
+    const Gr= res[0].GRADE;
+    return {
+        status: 200,
+        data: {
+            message: "Successful",
+            GRADE: Gr
+        }
+    }
+}

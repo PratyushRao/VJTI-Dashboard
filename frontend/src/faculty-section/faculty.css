@@ -1,5 +1,5 @@
 @import "../index.css";
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@320&display=swap');
 
 #faculty-parallax {
   position: absolute;
@@ -210,4 +210,30 @@ tr,th,td{
 
 lord-icon{
   cursor: pointer;
+}
+
+.select{
+  background-color: var(--prim-soft);
+  background-size: 1rem; 
+  padding-right: 2.5rem;
+  border: none;
+  border-bottom: 2px solid  var(--primary);
+  font-family: "roboto mono", monospace;
+  padding: 0.3rem;
+  width: 3.2rem;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 420;
+
+}
+
+.close{
+  display: inline;
+  color: #740f1e;
+  padding: 0.3rem;
+  cursor: pointer;
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: large;
 }

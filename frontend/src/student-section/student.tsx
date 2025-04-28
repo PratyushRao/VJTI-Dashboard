@@ -19,9 +19,10 @@ const uRoll = sessionStorage.getItem("user")
 //const uCGPA = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").cgpa : "CGPA";
 //const uDoB = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").dob : "DoB";
 
-const [activeSection, setActiveSection] = useState("Home")
 
 export default function Student() {
+  
+const [activeSection, setActiveSection] = useState("Home")
   const gridRef = useRef<HTMLDivElement>(null);
   const maxMovement = 16;
 
