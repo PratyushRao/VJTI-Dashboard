@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 declare namespace JSX {
   interface IntrinsicElements {
@@ -95,16 +96,16 @@ export default function Students() {
     }
   }
 
-  const saveGrade = async (sub: string, reg: number, name: string,grade) => {
+  const saveGrade = async (sub: string, reg: number, name: string, grade) => {
     setEditId(null);
 
-try {
+    try {
       const response = await fetch("http://localhost:8000/changeGrade", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ sub, reg, name, grade}),
+        body: JSON.stringify({ sub, reg, name, grade }),
       });
 
       const data = await response.json();
@@ -121,6 +122,16 @@ try {
 
       setStudents(updatedDetails);
       sessionStorage.setItem("subject", JSON.stringify(updatedDetails));
+      toast.success('Grade Edited!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+    });
 
     } catch (error) {
       alert("Invalid");
@@ -131,6 +142,7 @@ try {
 
 
   return <div className="subject-main-content">
+
     <div className="back" ><lord-icon onClick={(e) => { e.preventDefault(); back(); }}
       src="https://cdn.lordicon.com/vduvxizq.json"
       trigger="hover"
@@ -197,15 +209,15 @@ try {
               <td className='td-elements'>{item.NAME}</td>
               <td className='td-elements'><p className='close' onClick={(e) => { e.preventDefault(); setEditId(null); }}>X</p>
                 <select className='select' value={selectedGrade} onChange={handleChange}>
-                <option value="AA">AA</option>
-                <option value="AB">AB</option>
-                <option value="BB">BB</option>
-                <option value="BC">BC</option>
-                <option value="CC">CC</option>
-                <option value="CD">CD</option>
-                <option value="DD">DD</option>
-                <option value="FF">FF</option>
-              </select>
+                  <option value="AA">AA</option>
+                  <option value="AB">AB</option>
+                  <option value="BB">BB</option>
+                  <option value="BC">BC</option>
+                  <option value="CC">CC</option>
+                  <option value="CD">CD</option>
+                  <option value="DD">DD</option>
+                  <option value="FF">FF</option>
+                </select>
                 <lord-icon
                   onClick={(e) => { e.preventDefault(); saveGrade(sub, item.REG_NO, item.NAME, selectedGrade); }}
                   src="https://cdn.lordicon.com/ygymzvsj.json"
@@ -222,14 +234,14 @@ try {
                   trigger="hover"
                   stroke="bold"
                   colors="primary:#1a1b25,secondary:#ae152d"
-                  style={{ width: "25px", height: "25px", paddingTop: "6px"}}
+                  style={{ width: "25px", height: "25px", paddingTop: "6px" }}
                 ></lord-icon> {item.Attendance} <lord-icon
                   onClick={(e) => { e.preventDefault(); addAtt(sub, item.REG_NO, item.NAME); }}
                   src="https://cdn.lordicon.com/mfdeeuho.json"
                   trigger="hover"
                   stroke="bold"
                   colors="primary:#1a1b25,secondary:#ae152d"
-                  style={{ width: "25px", height: "25px", paddingTop: "6px",}}
+                  style={{ width: "25px", height: "25px", paddingTop: "6px", }}
                 ></lord-icon>
               </td>
             </tr>
