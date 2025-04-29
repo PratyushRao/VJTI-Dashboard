@@ -3,10 +3,10 @@
 
 #faculty-parallax {
   position: absolute;
-  top: -5%;
+  top: -2%;
   left: -5%;
   width: 110%;
-  height: 110%;
+  height: 100%;
   overflow: hidden;
   background-size: 40px 40px;
   background-image: radial-gradient(var(--white-hard) 1.5px, transparent 0);
@@ -17,6 +17,7 @@
   background-color: var(--white);
   min-width: 100vw;
   min-height: 100vh;
+  overflow: hidden;
   z-index: -1;
 }
 
@@ -47,10 +48,12 @@
 }
 
 .container {
-  width: 100vw;
-  min-height: 80vh;
+  width: 70vw;
+  min-height: 50vh;
   padding: 1.5rem;
   margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
   align-self: center;
@@ -74,10 +77,10 @@
 .main-content {
   display: flex;
   width: 80vw;
-  height: 80vh;
+  height: 75vh;
   overflow-y: scroll;
   margin: auto;
-  padding: 1rem;
+  padding: 0.4rem;
   padding-left: 2rem;
   padding-right: 2rem;
   box-shadow: 4px 4px var(--primary);
@@ -95,7 +98,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   justify-content: center;
-  padding-top: 5%;
+  padding-top: 1%;
   padding-left: 5%;
 }
 
@@ -159,7 +162,7 @@ tr,th,td{
 .subject-main-content{
   display: flex;
   width: 70vw;
-  height: 78vh;
+  height: 75vh;
   overflow-y: scroll;
   margin: auto;
   padding: 1rem;
