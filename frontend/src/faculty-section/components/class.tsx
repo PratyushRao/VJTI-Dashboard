@@ -229,14 +229,12 @@ export default function Students() {
                 <lord-icon
                   onClick={(e) => { e.preventDefault(); subtractAtt(sub, item.REG_NO, item.NAME); }}
                   src="https://cdn.lordicon.com/xcrmpfbb.json"
-                  trigger="hover"
                   stroke="bold"
                   colors="primary:#1a1b25,secondary:#ae152d"
                   style={{ width: "25px", height: "25px", paddingTop: "6px" }}
                 ></lord-icon> {item.Attendance} <lord-icon
                   onClick={(e) => { e.preventDefault(); addAtt(sub, item.REG_NO, item.NAME); }}
                   src="https://cdn.lordicon.com/mfdeeuho.json"
-                  trigger="hover"
                   stroke="bold"
                   colors="primary:#1a1b25,secondary:#ae152d"
                   style={{ width: "25px", height: "25px", paddingTop: "6px", }}
