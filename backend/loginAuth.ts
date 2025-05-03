@@ -52,12 +52,13 @@ export async function validateUser(client, utype, uname, pass) {
       isValid: true,
       user: {
         name: results[0].NAME,
-        roll: results[0].REG_NO || results[0].username,
-        utype: utype
-        //dob: results[0].DateOfBirth,
-        //email: results[0].EmailAddress,
-        //year: results[0].YEAR,
-        //cgpa: results[0].CGPA
+        roll: results[0].REG_NO,
+        utype: utype,
+        dob: results[0].DateOfBirth,
+        email: results[0].EmailAddress,
+        year: results[0].YEAR,
+        cgpa: results[0].CGPA,
+        branch: results[0].BRANCH,
       }
     }
   }

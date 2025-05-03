@@ -2,7 +2,10 @@ import "./student.css";
 import logo_img from "./vjti-logo.webp";
 import { useEffect, useRef, useState } from "react";
 
-import Profile from "./sub-sections/profile";
+import Home from "./sub-sections/home";
+import Downloads from "./sub-sections/downloads";
+import Announcements from "./sub-sections/announcements";
+import Reports from "./sub-sections/reports";
 
 //comment out this if block to to debug page without login
 if (!sessionStorage.getItem("user") && window.location.pathname != "/login")
@@ -47,6 +50,21 @@ const [activeSection, setActiveSection] = useState("Home")
     };
   }, []);
 
+  const renderSection = () => {
+    switch (activeSection) {
+      case "Home":
+        return <Home />;
+      case "Academic Reports":
+        return <Reports />;
+      case "Downloads":
+        return <Downloads />;
+      case "Announcements":
+        return <Announcements />;
+      default:
+        return <Home />;
+    }
+  };
+
   return (
     <div className="student-container">
         <title>VJTI Student Dashboard</title>
@@ -88,7 +106,7 @@ const [activeSection, setActiveSection] = useState("Home")
         </nav>
       </header>
       <div id = "student-main-body">
-              {/*Display a div depending on the selected menu button here*/}
+            {renderSection()}
       </div>
     </div>
   );

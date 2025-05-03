@@ -1,6 +1,7 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { Client } from "https://deno.land/x/mysql@v2.12.0/mod.ts";
 import { validateUser } from "./loginAuth.ts";
+import { getSemData } from "./semData.ts";
 import { getStudents, addAtt, subAtt, changeGrade } from "./subjectDetails.ts";
 
 //MySQL db connection
@@ -8,8 +9,15 @@ const client = await new Client().connect({
     hostname: "localhost",
     username: "root",
     db: "dti",
-    password: "Pratyush"
+    password: "12345678"
 });
+
+getSemData(client, "EC", 2, "211090004", [[],[]]).then((result) => {
+    console.log(result);
+}
+).catch((error) => {
+    console.error("Error:", error);
+})
 
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -163,8 +171,33 @@ export const handler = async (req: Request): Promise<Response> => {
             });
         }
     }
+    if (req.method === 'POST' && new URL(req.url).pathname === '/semData') {
+        try {
+            const {sub, reg } = await req.json();
 
+            const Att = await getStudents(client, sub, reg);
 
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            //return authentication result
+            return new Response(JSON.stringify(Att.data), {
+                headers,
+                status: Att.status
+            });
+        } catch (error) {
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            return new Response(JSON.stringify({
+                message: "Failed to collect student's data",
+                error: "Invalid Request"
+            }), {
+                headers,
+                status: 500
+            });
+        }
+    }
 
     // 404 Not Found
     return new Response(JSON.stringify({ message: "Not Found" }), {

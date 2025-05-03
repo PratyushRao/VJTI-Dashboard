@@ -93,10 +93,6 @@
 }
 
 #student-main-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: auto;
   margin-top: 5vh;
   width: 94%;
@@ -107,4 +103,72 @@
   box-shadow: 4px 4px var(--primary);
   border-radius: 10px;
   border: 2px solid var(--primary);
+}
+
+.sub-list {
+  font-family: var(--font-para);
+  color: var(--black);
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-block: 4px;
+  list-style-position: inside;
+  padding: 4px 2rem;
+}
+
+.sub-list:hover {
+  cursor: pointer;
+  color: var(--primary);
+  background-color: var(--prim-soft);
+  transform: translate(0, -2px);
+  transition: 0.05s ease-in-out;
+}
+
+.sub-list:hover > a {
+  text-decoration: var(--primary) underline;
+}
+
+.sub-section-title {
+  font-family: var(--font-imp);
+  font-size: 2rem;
+  color: var(--black);
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px dashed var(--white-hard);
+}
+
+.profile-details {
+  font-family: var(--font-para);
+  color: var(--black);
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding-block: 4px;
+  list-style-position: inside;
+  padding: 4px 2rem;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.profile-details > div {
+  padding: 0.5rem;
+  margin: 0;
+  text-align: center;
+  background-color: var(--prim-soft);
+  width: 90%;
+  margin: auto;
+  border: 1px solid var(--primary);
+  box-shadow: 2px 2px var(--primary);
+  transition: 0.1s ease-in-out;
+}
+
+.profile-details > div:hover {
+  box-shadow: 1px 1px var(--primary);
+}
+
+.student-datatype {
+  font-weight: 500;
+  color: var(--primary);
+  font-size: 1rem;
+  padding-bottom: 4px;
 }
