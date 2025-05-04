@@ -12,12 +12,11 @@ const client = await new Client().connect({
     password: "12345678"
 });
 
-getSemData(client, "EC", 2, "211090004", [[],[]]).then((result) => {
+getSemData(client, "EC", 2, "211090004", []).then((result) => {
     console.log(result);
-}
-).catch((error) => {
+}).catch((error) => {
     console.error("Error:", error);
-})
+});
 
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
@@ -197,6 +196,10 @@ export const handler = async (req: Request): Promise<Response> => {
                 status: 500
             });
         }
+    }
+    if( req.method === 'GET' && new URL(req.url).pathname === '/reports') {
+        const { user, branch, sem, rollno } = await req.json();
+        const semData = [];
     }
 
     // 404 Not Found

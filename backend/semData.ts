@@ -7,13 +7,15 @@ export async function getSemData (client, branch, sem, rollno, semData) {
     );
     if (results.length > 0) {
       let subs =  results[0].SUBJECTS.split('|');
+      let subArr: object[] = []
       for(let j of subs) {
         const subRes = await client.query(
           `SELECT GRADE, Attendance, FACULTY, CREDIT FROM ?? WHERE REG_NO = ?`,
           [j, rollno]
         );
-        semData[i-1].push(subRes[0]);
+        if(subRes.length > 0) subArr.push(subRes[0]);
       }
+      semData.push(subArr)
     }
   }
 

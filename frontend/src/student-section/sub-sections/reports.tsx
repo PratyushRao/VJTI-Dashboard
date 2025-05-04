@@ -1,6 +1,8 @@
 export default function Reports() {
 
-  
+  //const response = await fetch("http://localhost:8080/reports", {
+    
+  })
 
   return (
     <div className="reports-container">
