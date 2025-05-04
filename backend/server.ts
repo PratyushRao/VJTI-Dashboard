@@ -12,6 +12,7 @@ const client = await new Client().connect({
     password: "12345678"
 });
 
+//DEBUGGING. WILL REMOVE LATER
 getSemData(client, "EC", 2, "211090004", []).then((result) => {
     console.log(result);
 }).catch((error) => {
@@ -170,37 +171,7 @@ export const handler = async (req: Request): Promise<Response> => {
             });
         }
     }
-    if (req.method === 'POST' && new URL(req.url).pathname === '/semData') {
-        try {
-            const {sub, reg } = await req.json();
-
-            const Att = await getStudents(client, sub, reg);
-
-            const headers = new Headers(corsHeaders);
-            headers.set('Content-Type', 'application/json');
-
-            //return authentication result
-            return new Response(JSON.stringify(Att.data), {
-                headers,
-                status: Att.status
-            });
-        } catch (error) {
-            const headers = new Headers(corsHeaders);
-            headers.set('Content-Type', 'application/json');
-
-            return new Response(JSON.stringify({
-                message: "Failed to collect student's data",
-                error: "Invalid Request"
-            }), {
-                headers,
-                status: 500
-            });
-        }
-    }
-    if( req.method === 'GET' && new URL(req.url).pathname === '/reports') {
-        const { user, branch, sem, rollno } = await req.json();
-        const semData = [];
-    }
+    
 
     // 404 Not Found
     return new Response(JSON.stringify({ message: "Not Found" }), {
