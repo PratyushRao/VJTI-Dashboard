@@ -10,7 +10,7 @@ export default function Home() {
     : "Year";
   const uBranch = (sessionStorage.getItem("user")
     ? JSON.parse(sessionStorage.getItem("user") || "").branch
-    : "Branch").replace("EC", "Electronics").replace("ExTC", "Electronics & Telecommunication").replace("IT", "Information Technology").replace("CS", "Computer Science").replace("ME", "Mechanical").replace("CE", "Civil").replace("EE", "Electrical").replace("EP", "Engineering Physics").replace("MA", "Mathematics").replace("CH", "Chemistry").replace("PH", "Physics").replace("EN", "English").replace("HS", "Humanities & Social Sciences");
+    : "Branch").replace("EC", "Electronics").replace("ExTC", "Electronics & Telecommunication");
   const uCGPA = sessionStorage.getItem("user")
     ? JSON.parse(sessionStorage.getItem("user") || "").cgpa
     : "CGPA";

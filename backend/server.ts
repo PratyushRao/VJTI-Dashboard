@@ -12,13 +12,6 @@ const client = await new Client().connect({
     password: "12345678"
 });
 
-//DEBUGGING. WILL REMOVE LATER
-getSemData(client, "EC", 2, "211090004", []).then((result) => {
-    console.log(result);
-}).catch((error) => {
-    console.error("Error:", error);
-});
-
 const corsHeaders = {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
@@ -171,7 +164,32 @@ export const handler = async (req: Request): Promise<Response> => {
             });
         }
     }
-    
+    if(req.method === 'GET' && new URL(req.url).pathname === '/reports') {
+        try {
+            const {uRoll, uYear, uBranch} = await req.json();
+
+            const reports = await getSemData(client, uBranch, uYear, uRoll, []);
+
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            return new Response(JSON.stringify(reports.data), {
+                headers,
+                status: reports.status
+            });
+        } catch (error) {
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            return new Response(JSON.stringify({
+                message: "Failed to collect student's data",
+                error: "Invalid Request"
+            }), {
+                headers,
+                status: 500
+            });
+        }
+    }
 
     // 404 Not Found
     return new Response(JSON.stringify({ message: "Not Found" }), {
