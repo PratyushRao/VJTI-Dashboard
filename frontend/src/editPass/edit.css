@@ -73,6 +73,13 @@ h1 {
   font-weight: 700;
 }
 
+.back{
+  width: 1.5rem;
+  position: absolute;
+  
+  left: 5%;
+}
+
 input {
   border: none;
   outline: none;

@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import './login.css';
+import './edit.css';
 
-function Login() {
+function Edit() {
   const [userType, setUserType] = useState<'student' | 'faculty'>('student');
   const [placeholderText, setPlaceholderText] = useState('Registration ID');
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const gridRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
   const maxMovement = 16;
@@ -45,33 +45,31 @@ function Login() {
 
   const submitData = async () => {
     try {
-      sessionStorage.clear();
-      const response = await fetch("http://localhost:8000/login", {
+      const response = await fetch("http://localhost:8000/edit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({userType, username, password }),
+        body: JSON.stringify({ userType, username, email, password }),
       });
 
       const data = await response.json();
-      if (!data.isValid) { 
+      if (!data.isValid) {
         alert(data.message);
         return;
       }
       if (data.isValid) {
-        sessionStorage.setItem("user", JSON.stringify(data.user));
-        window.location.href = `/${userType}`;
+        window.location.href = `/login`;
       }
 
 
     } catch (error) {
       alert("Invalid");
-      console.error("Login error:", error);
+      console.error("Password error:", error);
     }
   };
 
-  const handleKeyDown = (e: any) => {
+  const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       submitData();
     }
@@ -81,7 +79,14 @@ function Login() {
       <title>VJTI Dashboard Login</title>
       <div id="parallax-grid" ref={gridRef}> </div>
       <div id="main-login" ref={mainRef}>
+
         <div id="toggle">
+          <div className="back" ><lord-icon onClick={(e) => { e.preventDefault(); window.location.href = `/login`; }}
+            src="https://cdn.lordicon.com/vduvxizq.json"
+            trigger="hover"
+            colors="primary:#ae152d"
+            style={{ width: '2.5rem', height: '2.5rem', "rotate": "180deg", "cursor": "pointer" }}>
+          </lord-icon></div>
           <button
             className={userType === 'student' ? 'active' : 'inactive'}
             id="student"
@@ -98,16 +103,16 @@ function Login() {
           </button>
         </div>
 
-        <h1>SIGN IN</h1>
         <div id="login">
-          <input type="text" id="user" placeholder={placeholderText} value={username.trim()} onChange={(e) => setUsername(e.target.value)}/>
-          <input type="password" id="password" placeholder="Password" value={password.trim()} onKeyDown={handleKeyDown} onChange={(e) => setPassword(e.target.value)}/>
+          <input type="text" id="user" placeholder={placeholderText} value={username.trim()} onChange={(e) => setUsername(e.target.value)} />
+          <input type="text" id="password" placeholder="Email ID" value={email.trim()} onKeyDown={handleKeyDown} onChange={(e) => setEmail(e.target.value)} />
+          <input type="password" id="password" placeholder="Enter New Password" value={password.trim()} onKeyDown={handleKeyDown} onChange={(e) => setPassword(e.target.value)} />
           <button id="submit" onClick={(e) => { e.preventDefault(); submitData(); }}>CONTINUE</button>
-          <Link className="CP" to="/edit">Forgot Password?</Link>
+
         </div>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Edit;

@@ -4,6 +4,7 @@ import Login from './login/login.tsx';
 import Student from './student-section/student.tsx';
 import Faculty from './faculty-section/faculty.tsx';
 import Subject from './faculty-section/subject.tsx';
+import Edit from './editPass/edit.tsx';
 import './index.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Navigate to="/login" replace />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/edit" element={<Edit />} />
         <Route path="/student" element={<Student />} />
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/subject" element={<Subject />} />

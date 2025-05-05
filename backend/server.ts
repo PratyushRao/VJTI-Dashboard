@@ -3,13 +3,13 @@ import { Client } from "https://deno.land/x/mysql@v2.12.0/mod.ts";
 import { validateUser } from "./loginAuth.ts";
 import { getSemData } from "./semData.ts";
 import { getStudents, addAtt, subAtt, changeGrade } from "./subjectDetails.ts";
-
+import { editPassword } from "./editPass.ts";
 //MySQL db connection
 const client = await new Client().connect({
     hostname: "localhost",
     username: "root",
     db: "dti",
-    password: "12345678"
+    password: "Pratyush"
 });
 
 const corsHeaders = {
@@ -183,6 +183,34 @@ export const handler = async (req: Request): Promise<Response> => {
 
             return new Response(JSON.stringify({
                 message: "Failed to collect student's data",
+                error: "Invalid Request"
+            }), {
+                headers,
+                status: 500
+            });
+        }
+    }
+
+    if (req.method === 'POST' && new URL(req.url).pathname === '/edit') {
+        try {
+            const {userType, username, email, password} = await req.json();
+
+            const Data = await editPassword(client, userType, username, email, password);
+
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            //return authentication result
+            return new Response(JSON.stringify(Data.data), {
+                headers,
+                status: Data.status
+            });
+        } catch (error) {
+            const headers = new Headers(corsHeaders);
+            headers.set('Content-Type', 'application/json');
+
+            return new Response(JSON.stringify({
+                message: "Failed to update data",
                 error: "Invalid Request"
             }), {
                 headers,
