@@ -4,7 +4,7 @@ import Login from './login/login.tsx';
 import Student from './student-section/student.tsx';
 import Faculty from './faculty-section/faculty.tsx';
 import Subject from './faculty-section/subject.tsx';
-import Edit from './editPass/edit.tsx';
+import Edit from './edit-pass/edit.tsx';
 import './index.css';
 
 function App() {
