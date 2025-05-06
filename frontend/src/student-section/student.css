@@ -2,8 +2,8 @@
 
 #student-parallax {
   position: absolute;
-  top: -5%;
-  left: -5%;
+  top: -10%;
+  left: -10%;
   width: 110%;
   height: 110%;
   overflow: hidden;
@@ -171,4 +171,139 @@
   color: var(--primary);
   font-size: 1rem;
   padding-bottom: 4px;
+}
+
+#reports-container {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: relative;
+}
+
+#reports-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  font-family: var(--font-imp);
+  border-top: 2px dotted var(--white-hard);
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 0;
+}
+
+.sem-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.sem-selector-container > h4 {
+  font-family: var(--font-para);
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.sem-selector > button {
+  font-family: var(--font-para);
+  color: var(--black);
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: var(--white);
+  margin: 2px;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  border: 1px solid var(--white-hard);
+}
+
+.sem-selector > button:hover {
+  cursor: pointer;
+  color: var(--primary);
+  background: var(--prim-soft);
+  transform: translate(0, -2px);
+  border: 1px solid var(--primary);
+}
+
+#active-sem {
+  color: var(--primary);
+  background: var(--prim-soft);
+  border: 1px solid var(--primary);
+}
+
+.sem-reports {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.report-card {
+  background-color: var(--prim-soft);
+  border: 1px solid var(--primary);
+  box-shadow: 2px 2px var(--primary);
+  transition: 0.1s ease-in-out;
+  padding: 0.8rem;
+}
+
+.report-card:hover {
+  box-shadow: 1px 1px var(--primary);
+}
+
+.report-title {
+  font-family: var(--font-para);
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: underline;
+  margin-bottom: 0.4rem;
+}
+
+.report-details {
+  font-family: var(--font-para);
+  color: var(--black-soft);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding-block: 1px;
+}
+
+.subject-data {
+  font-family: var(--font-para);
+  color: var(--black);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.sgpa-container, .sem-selector-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-inline: 1rem;
+} 
+
+.sgpa-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  font-family: var(--font-para);
+  min-width: 14ch;
+}
+
+.sgpa-title {
+  font-weight: 600;;
+  color: var(--black-soft);
+  font-size: 1.2rem;
+}
+
+.sgpa {
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 1.2rem;
 }

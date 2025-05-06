@@ -65,7 +65,6 @@ function Login() {
 
 
     } catch (error) {
-      alert("Invalid");
       console.error("Login error:", error);
     }
   };

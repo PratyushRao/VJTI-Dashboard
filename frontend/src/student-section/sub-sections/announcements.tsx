@@ -1,5 +1,3 @@
-import "../student.css"
-
 export default function Announcements() {
   const announcements: string[][] = [
   [`Circular for all students regarding convocation day of 06/03/2025`, `https://vjti.ac.in/wp-content/uploads/2025/03/Convocation_Circular_06.03.2025.pdf`],

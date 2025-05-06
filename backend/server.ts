@@ -1,7 +1,6 @@
 import { serve } from "https://deno.land/std@0.224.0/http/server.ts";
 import { Client } from "https://deno.land/x/mysql@v2.12.0/mod.ts";
 import { validateUser } from "./loginAuth.ts";
-import { getSemData } from "./semData.ts";
 import { getStudents, addAtt, subAtt, changeGrade } from "./subjectDetails.ts";
 
 //MySQL db connection
@@ -150,32 +149,6 @@ export const handler = async (req: Request): Promise<Response> => {
             return new Response(JSON.stringify(Gr.data), {
                 headers,
                 status: Gr.status
-            });
-        } catch (error) {
-            const headers = new Headers(corsHeaders);
-            headers.set('Content-Type', 'application/json');
-
-            return new Response(JSON.stringify({
-                message: "Failed to collect student's data",
-                error: "Invalid Request"
-            }), {
-                headers,
-                status: 500
-            });
-        }
-    }
-    if(req.method === 'GET' && new URL(req.url).pathname === '/reports') {
-        try {
-            const {uRoll, uYear, uBranch} = await req.json();
-
-            const reports = await getSemData(client, uBranch, uYear, uRoll, []);
-
-            const headers = new Headers(corsHeaders);
-            headers.set('Content-Type', 'application/json');
-
-            return new Response(JSON.stringify(reports.data), {
-                headers,
-                status: reports.status
             });
         } catch (error) {
             const headers = new Headers(corsHeaders);

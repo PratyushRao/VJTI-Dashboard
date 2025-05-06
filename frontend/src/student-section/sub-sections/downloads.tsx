@@ -1,5 +1,3 @@
-import "../student.css"
-
 const uYear = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").year : "Year";
 const uBranch = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").branch : "Branch";
 

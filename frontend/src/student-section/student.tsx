@@ -17,11 +17,6 @@ const uName = sessionStorage.getItem("user")
 const uRoll = sessionStorage.getItem("user")
   ? JSON.parse(sessionStorage.getItem("user") || "").roll
   : "Roll No.";
-//const uYear = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").year : "Year";
-//const uBranch = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").branch : "Branch";
-//const uCGPA = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").cgpa : "CGPA";
-//const uDoB = sessionStorage.getItem("user") ? JSON.parse(sessionStorage.getItem("user") || "").dob : "DoB";
-
 
 export default function Student() {
   
