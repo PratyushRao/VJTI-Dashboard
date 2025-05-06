@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import './edit.css';
 
 function Edit() {
   const [userType, setUserType] = useState<'student' | 'faculty'>('student');
@@ -81,7 +80,10 @@ function Edit() {
       <div id="main-login" ref={mainRef}>
 
         <div id="toggle">
-          <div className="back" ><lord-icon onClick={(e) => { e.preventDefault(); window.location.href = `/login`; }}
+          <div className="back" style = {{
+              width: "1.5rem",
+              position: "absolute",
+              left: "5%"}}><lord-icon onClick={(e) => { e.preventDefault(); window.location.href = `/login`; }}
             src="https://cdn.lordicon.com/vduvxizq.json"
             trigger="hover"
             colors="primary:#ae152d"

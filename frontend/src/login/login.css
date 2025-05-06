@@ -149,18 +149,21 @@ input:focus {
 
 
 
-.CP{
+.CP {
   text-align: center;
   font-family:  "roboto mono", monospace;
   font-size: 0.9rem;
   cursor: pointer;
   text-decoration: underline;
   color: #212230a4;
+  transition: 0.1s ease-in-out;
+  width: fit-content;
+  margin: auto;
 }
 
-.CP:hover{
-  color: #212230d4;
-  letter-spacing: 0.02rem;
+.CP:hover {
+  color: var(--black);
+  letter-spacing: 0.1px;
 }
 
 @media only screen and (max-device-width: 1025px){
