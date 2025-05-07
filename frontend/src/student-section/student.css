@@ -103,6 +103,7 @@
   box-shadow: 4px 4px var(--primary);
   border-radius: 10px;
   border: 2px solid var(--primary);
+  overflow: scroll;
 }
 
 .sub-list {
@@ -144,6 +145,7 @@
   padding-block: 4px;
   list-style-position: inside;
   padding: 4px 2rem;
+  padding-bottom: 1rem;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -173,11 +175,13 @@
   padding-bottom: 4px;
 }
 
-#reports-container {
+.reports-container {
   width: 100%;
   height: 100%;
-  padding: 0;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: space-between;
 }
 
 #reports-footer {
@@ -189,8 +193,6 @@
   border-top: 2px dotted var(--white-hard);
   width: 100%;
   height: 10%;
-  position: absolute;
-  bottom: 0;
 }
 
 .sem-selector {

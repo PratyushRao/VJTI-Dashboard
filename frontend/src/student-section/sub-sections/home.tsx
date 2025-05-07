@@ -20,7 +20,7 @@ export default function Home() {
   const uEmail = sessionStorage.getItem("user")
     ? JSON.parse(sessionStorage.getItem("user") || "").email
     : "email";
-
+    
   return (
     <div className="profile-container">
       <h1 className = "sub-section-title">👤 Student Profile</h1>
