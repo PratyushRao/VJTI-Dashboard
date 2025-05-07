@@ -23,7 +23,7 @@ export default function Downloads() {
       <h1 className="sub-section-title">📥 Downloads</h1>
       <ul style = {{listStyleType: "square"}}>
         {downloads.map((download) => (
-          <li className = "sub-list">{download}</li>
+          <li className = "sub-list" onClick = {() => alert(`${download.replace(/\[.*?\]/g, '')} is currently unaivalable. Please try again later.`)}>{download}</li>
         ))}
       </ul>
     </div>

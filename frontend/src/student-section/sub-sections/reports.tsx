@@ -42,6 +42,7 @@ export default function Reports() {
                 </span>
               </div>
             </div>
+            
           );
         })}
       </div>
@@ -66,12 +67,13 @@ export default function Reports() {
 
   return (
     <div className="reports-container">
-      <h1 className="sub-section-title">📊 Academic Reports</h1>
-
-      {renderSemReports()}
+      <div>
+        <h1 className="sub-section-title">📊 Academic Reports</h1>
+        {renderSemReports()}
+      </div>
 
       <footer id="reports-footer">
-      <div className="sem-selector-container">
+        <div className="sem-selector-container">
           <h4>SEMESTER:</h4>
           <div className="sem-selector">
             {semReports.map((_: any, index: number) => {
