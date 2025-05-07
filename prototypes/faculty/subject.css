@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #fdfdfd;
+  }
+  
+  .header {
+    background-color: #0f0f23;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .college-name h2 {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  
+  .college-name p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    font-style: italic;
+  }
+  
+  .right-corner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .right-corner span {
+    font-weight: bold;
+  }
+  
+  .right-corner a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .outer-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+  
+  .inner-box {
+    border: 3px solid #a62424;
+    border-radius: 12px;
+    padding: 30px;
+    width: 90%;
+    max-width: 1100px;
+    box-sizing: border-box;
+  }
+  
+  .subject-heading {
+    text-align: center;
+  }
+  
+  .subject-heading h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  
+  .subject-heading hr {
+    border: 1px solid #a62424;
+    width: 60%;
+    margin: 0 auto 10px;
+  }
+  
+  .subject-heading p {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  .table-box {
+    margin-top: 25px;
+    border: 2px solid #a62424;
+    border-radius: 10px;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: monospace;
+    font-size: 16px;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: center;
+  }
+  
+  th {
+    font-weight: bold;
+    border-bottom: 2px solid #a62424;
+  }
+  
+  td {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  td:last-child {
+    font-size: 1.2rem;
+  }
+  #faculty-main-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+  }
+  #faculty-user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  #logo {
+    height: 60px;
+  }
+  #logout {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
