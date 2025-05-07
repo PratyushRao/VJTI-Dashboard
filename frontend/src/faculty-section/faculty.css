@@ -208,7 +208,7 @@ tr,th,td{
 }
 .back{
   width: 16%;
-  position: fixed;
+  position: absolute;
   left: 18%;
   transition: ease-in-out;
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Faculty Classes</title>
+  <link rel="stylesheet" href="faculty.css" />
+</head>
+<body>
+  <div class="faculty-container">
+    <div id="faculty-parallax"></div>
+
+    <header>
+      <div id="faculty-main-head">
+        <div style="display: flex; align-items: center;">
+          <img src="vjti-logo.webp" alt="VJTI Logo" id="logo" />
+          <div style="margin-left: 10px;">
+            <h3 style="margin: 0;">Veermata Jijabai Technological Institute</h3>
+            <p style="margin: 0; font-size: 12px;">An Autonomous Institute of Government of Maharashtra</p>
+          </div>
+        </div>
+        <div id="faculty-user-info">
+          <p>Prof. Sujata Mishra</p>
+          <a id="logout" href="#">LOG OUT</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="subject-wrapper">
+        <h2>Your Classes:</h2>
+        <div class="subject-grid">
+          <div class="subject-card">
+            <h3>CHEMISTRY</h3>
+            <p>Branch: BTech EC, Semester: 1</p>
+          </div>
+          <div class="subject-card">
+            <h3>PHYSICS</h3>
+            <p>Branch: BTech EC, Semester: 2</p>
+          </div>
+          <div class="subject-card">
+            <h3>MATHEMATICS FOR<br />ELECTRICAL ENGINEERS 1</h3>
+            <p>Branch: BTech EC, Semester: 3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Basic parallax effect
+    const gridRef = document.getElementById("faculty-parallax");
+    const maxMovement = 16;
+
+    document.addEventListener("mousemove", (e) => {
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      const moveX = (mouseX - 0.5) * maxMovement;
+      const moveY = (mouseY - 0.5) * maxMovement;
+
+      if (gridRef) {
+        gridRef.style.transform = `translate(${-moveX * 0.4}px, ${-moveY * 0.4}px)`;
+      }
+    });
+
+    document.getElementById("logout").addEventListener("click", (e) => {
+      e.preventDefault();
+      sessionStorage.clear();
+      window.location.href = "./login";
+    });
+  </script>
+</body>
+</html>
