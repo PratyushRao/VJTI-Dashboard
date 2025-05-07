@@ -6,7 +6,7 @@ import mysql.connector as mysqltor
 
 HOST="localhost"
 USER="root"
-PASSWD="Pratyush" #Before Running the code update the PASSWD variable to your MySQL Password.
+PASSWD="12345678" #Before Running the code update the PASSWD variable to your MySQL Password.
 
 
 myDB = mysqltor.connect(
@@ -22,7 +22,7 @@ cur.execute("USE DTI")
 #CREATE TABLES
 cur.execute("CREATE TABLE IF NOT EXISTS Syllabus (SEMESTER INT NOT NULL, BRANCH VARCHAR(50) NOT NULL, SUBJECTS VARCHAR(4000) NOT NULL)")
 
-cur.execute("CREATE TABLE IF NOT EXISTS Students (REG_NO CHAR(9) PRIMARY KEY, NAME VARCHAR(100) NOT NULL, EmailAddress VARCHAR(100) NOT NULL, DateOfBirth DATE NOT NULL, BRANCH VARCHAR(50) NOT NULL, YEAR INT NOT NULL, CGPA FLOAT(4,2), PASSWORD VARCHAR(100) NOT NULL)")
+cur.execute("CREATE TABLE IF NOT EXISTS Students (REG_NO CHAR(9) PRIMARY KEY, NAME VARCHAR(100) NOT NULL, EmailAddress VARCHAR(100) NOT NULL, DateOfBirth DATE NOT NULL, BRANCH VARCHAR(50) NOT NULL, YEAR INT NOT NULL, CGPA FLOAT(4,2), BloodGrp Varchar(4) NOT NULL, PASSWORD VARCHAR(100) NOT NULL)")
 
 cur.execute("CREATE TABLE IF NOT EXISTS faculty (NAME VARCHAR(50) PRIMARY KEY, USERNAME VARCHAR(100) NOT NULL, PASSWORD VARCHAR(100) NOT NULL,EmailAddress VARCHAR(100) NOT NULL, SUBJECTS VARCHAR(200) NOT NULL)")
 
@@ -102,16 +102,16 @@ try:
 except:
     print('Error while creating Syllabus Table!')
 try:
-    cur.execute("INSERT INTO Students (REG_NO, NAME, EmailAddress, DateOfBirth, BRANCH, YEAR, CGPA, PASSWORD) VALUES('211090001', 'Aarav Sharma', 'aarav_s24@et.vjti.ac.in', '2005-03-12', 'ExTC', 4, 8.45,'20050312'),\
-('221090002', 'Ishaan Mehta', 'ishaan_m23@ee.vjti.ac.in', '2006-07-25', 'EC', 3, 7.89,'20060725'),\
-('241090003', 'Meera Iyer', 'meera_i24@et.vjti.ac.in', '2005-11-08', 'ExTC', 1, 9.12,'20051108'),\
-('211090004', 'Sanya Patel', 'sanya_p23@ee.vjti.ac.in', '2007-02-14', 'EC', 4, 8.76,'20070214'),\
-('231090005', 'Rohan Joshi', 'rohan_j24@et.vjti.ac.in', '2006-05-21', 'ExTC', 2, 7.95,'20060521'),\
-('221090006', 'Neha Kulkarni', 'neha_k23@ee.vjti.ac.in', '2005-08-30', 'EC', 3, 8.30,'20050830'),\
-('241090007', 'Ananya Rao', 'ananya_r24@et.vjti.ac.in', '2007-01-18', 'ExTC', 1, 6.50,'20070118'),\
-('211090008', 'Vikram Nair', 'vikram_n23@ee.vjti.ac.in', '2006-04-05', 'EC', 4, 7.60,'20060405'),\
-('231090009', 'Kiran Shah', 'kiran_s24@et.vjti.ac.in', '2005-09-14', 'ExTC', 2, 7.00,'20050914'),\
-('221090010', 'Sneha Verma', 'sneha_v23@ee.vjti.ac.in', '2007-03-25', 'EC', 3, 8.55,'20070325')")
+    cur.execute("INSERT INTO Students (REG_NO, NAME, EmailAddress, DateOfBirth, BRANCH, YEAR, CGPA, BloodGrp, PASSWORD) VALUES('211090001', 'Aarav Sharma', 'aarav_s24@et.vjti.ac.in', '2005-03-12', 'ExTC', 4, 8.45,'A-','20050312'),\
+('221090002', 'Ishaan Mehta', 'ishaan_m23@ee.vjti.ac.in', '2006-07-25', 'EC', 3, 7.89,'A+','20060725'),\
+('241090003', 'Meera Iyer', 'meera_i24@et.vjti.ac.in', '2005-11-08', 'ExTC', 1, 9.12,'O+','20051108'),\
+('211090004', 'Sanya Patel', 'sanya_p23@ee.vjti.ac.in', '2007-02-14', 'EC', 4, 8.76,'B+','20070214'),\
+('231090005', 'Rohan Joshi', 'rohan_j24@et.vjti.ac.in', '2006-05-21', 'ExTC', 2, 7.95,'O-','20060521'),\
+('221090006', 'Neha Kulkarni', 'neha_k23@ee.vjti.ac.in', '2005-08-30', 'EC', 3, 8.30,'AB+','20050830'),\
+('241090007', 'Ananya Rao', 'ananya_r24@et.vjti.ac.in', '2007-01-18', 'ExTC', 1, 6.50,'B-','20070118'),\
+('211090008', 'Vikram Nair', 'vikram_n23@ee.vjti.ac.in', '2006-04-05', 'EC', 4, 7.60,'A+','20060405'),\
+('231090009', 'Kiran Shah', 'kiran_s24@et.vjti.ac.in', '2005-09-14', 'ExTC', 2, 7.00,'B+','20050914'),\
+('221090010', 'Sneha Verma', 'sneha_v23@ee.vjti.ac.in', '2007-03-25', 'EC', 3, 8.55,'O+','20070325')")
     print('Students table Created!')
 except:
     print('Error while creating Students Table!')

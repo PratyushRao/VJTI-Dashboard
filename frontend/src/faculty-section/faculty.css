@@ -50,7 +50,7 @@
 }
 
 .container {
-  width: 70vw;
+  width: 90vw;
   min-height: 50vh;
   padding: 1.5rem;
   margin: auto;
@@ -78,13 +78,10 @@
 
 .main-content {
   display: flex;
-  width: 80vw;
-  height: 75vh;
+  width: 92vw;
+  height: 80vh;
   overflow-y: scroll;
   margin: auto;
-  padding: 0.4rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
   box-shadow: 4px 4px var(--primary);
   border-radius: 10px;
   border: 2px solid var(--primary);
@@ -100,41 +97,51 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   justify-content: center;
-  padding-top: 1%;
-  padding-left: 5%;
+  margin: 2rem
 }
 
 .classes {
-  width: 27vw;
-  height: 25vh;
-  border: 2px solid var(--primary);
-  border-radius: 10px;
-  text-align: center;
-  font-family: var(--font-para);
-  font-weight: 500;
-  cursor: pointer;
-  box-shadow: 4px 4px var(--primary);
-  align-content: center;
-  font-size:x-large;
+  background-color: var(--prim-soft);
+  border: 1px solid var(--primary);
+  box-shadow: 2px 2px var(--primary);
+  font-family: var(--font-para), monospace;
+  padding: 0.8rem;
   display: flex;
   flex-direction: column;
-  gap: 10%;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
+  height: 20vh;
 }
 
 
 .classes:hover{
-  box-shadow: 2px 2px var(--primary);
-  transform: translate(2px,2px);
+  box-shadow: 1px 1px var(--primary);
 }
 
 .subject{
-  font-size: x-large;
+  font-size: 1.4rem;
+  font-weight: 800;
   height: 40%;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+  letter-spacing: 1px;
+  text-decoration: underline;
 }
-.year{
-  font-size: small;
+.branch-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--black);
+}
+.semester {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.faculty-label {
+  color: var(--black-soft);
+  font-weight: 500;
+  display: inline;
 }
 
 table{

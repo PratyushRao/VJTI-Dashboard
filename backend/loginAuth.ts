@@ -60,6 +60,7 @@ export async function validateUser(client, utype, uname, pass) {
           year: results[0].YEAR,
           cgpa: results[0].CGPA,
           branch: results[0].BRANCH,
+          bloodGrp: results[0].BloodGrp,
           semReports: await getSemData(client, results[0].BRANCH, results[0].YEAR * 2, uname)
         },
       },

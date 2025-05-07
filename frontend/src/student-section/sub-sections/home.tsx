@@ -20,6 +20,9 @@ export default function Home() {
   const uEmail = sessionStorage.getItem("user")
     ? JSON.parse(sessionStorage.getItem("user") || "").email
     : "email";
+  const uBlood = sessionStorage.getItem("user")
+    ? JSON.parse(sessionStorage.getItem("user") || "").bloodGrp
+    : "Blood Group";
     
   return (
     <div className="profile-container">
@@ -34,7 +37,7 @@ export default function Home() {
         <div><div className="student-datatype">Department:</div> Electrical</div>
         <div><div className="student-datatype">CGPA:</div> {uCGPA}</div>
         <div><div className="student-datatype">Date of Birth (YYYY-MM-DD):</div> {uDoB}</div>
-        <div><div className="student-datatype">Blood Type:</div> B+</div>
+        <div><div className="student-datatype">Blood Type:</div> {uBlood}</div>
       </div>
     </div>
   );
