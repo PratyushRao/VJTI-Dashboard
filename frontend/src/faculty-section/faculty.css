@@ -62,8 +62,6 @@
   z-index: 3;
 }
 
-
-
 .title {
   text-align: center;
   font-size: xx-large;
@@ -91,13 +89,11 @@
 }
 
 .class-container {
-  margin: auto;
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  justify-content: center;
-  margin: 2rem
+  padding: 2rem;
 }
 
 .classes {
@@ -110,7 +106,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+  min-height: 16vh;
 }
 
 
@@ -119,7 +115,7 @@
 }
 
 .subject{
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 800;
   height: 40%;
   color: var(--primary);
@@ -128,12 +124,12 @@
   text-decoration: underline;
 }
 .branch-label {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--black);
 }
 .semester {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--black);
 }
@@ -150,28 +146,28 @@ table{
   font-family: "roboto mono", monospace;
   border-spacing: 0;
   border: 2px solid var(--primary);
-  border-radius: 4px;
   box-shadow: 4px 4px var(--primary);
-  padding:0.5rem;
+  padding:0.8rem;
+  background-color: var(--prim-soft);
 }
 
 thead{
-  border-radius: 4px;
-  margin: 0;
-  height: 2rem;
-  font-size: large;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
 }
 
 tr,th,td{
   padding: 0.5rem;
   height: 1.5rem;
   text-align: center;
+  font-weight: 600;
 }
 
 .subject-main-content{
   display: flex;
-  width: 70vw;
-  height: 75vh;
+  width: 92vw;
+  height: 80vh;
   overflow-y: scroll;
   margin: auto;
   padding: 1rem;
@@ -183,7 +179,6 @@ tr,th,td{
   background-color: var(--white);
   z-index: 2;
   align-items: center;
-  gap: 5%
 }
 
 .subject-title {
@@ -214,10 +209,9 @@ tr,th,td{
   font-size: large;
 }
 .back{
-  width: 16%;
+  width: 10%;
   position: absolute;
-  left: 18%;
-  transition: ease-in-out;
+  left: 10vw;
 }
 
 lord-icon{
@@ -231,12 +225,8 @@ lord-icon{
   border: none;
   border-bottom: 2px solid  var(--primary);
   font-family: "roboto mono", monospace;
-  padding: 0.3rem;
-  width: 3.2rem;
   cursor: pointer;
-  font-size: medium;
-  font-weight: 420;
-
+  font-weight: 600;
 }
 
 .close{
