@@ -118,11 +118,9 @@ except:
 try:
     cur.execute("INSERT INTO Faculty (NAME, USERNAME, PASSWORD, EmailAddress, SUBJECTS) VALUES\
 ('Dr. Anil Mehta', 'anmehta', 'anil@123', 'anil@gmail.com', 'CHEMISTRY'),\
-('Prof. Sujata Mishra', 'sumishra', 'sujata@123', 'sujata@gmail.com', 'CHEMISTRY|PHYSICS|MATHEMATICS_FOR_ELECTRICAL_ENGINEERS_1|MATHEMATICS_FOR_ELECTRICAL_ENGINEERS_2'),\
-('Dr. Rajeshwari Menon', 'ramenon', 'rajeshwari@123', 'rajeshwari@gmail.com', 'ENGINEERING_MATHEMATICS_1|ENGINEERING_MATHEMATICS_2'),\
-('Dr. Suresh Nambiar', 'sunambiar', 'suresh@123', 'suresh@gmail.com', 'ENGINEERING_MATHEMATICS_1'),\
-('Prof. Arvind Kumar', 'arkumar', 'arvind@123', 'arvind@gmail.com', 'ENGINEERING_MECHANICS'),\
-('Prof. Kavita Deshpande', 'kadeshpande', 'kavita@123', 'kavita@gmail.com', 'ENGINEERING_MECHANICS'),\
+('Prof. Sujata Mishra', 'sumishra', 'sujata@123', 'sujata@gmail.com', 'CHEMISTRY|PHYSICS|MATHEMATICS_FOR_ELECTRICAL_ENGINEERS_1'),\
+('Dr. Rajeshwari Menon', 'ramenon', 'rajeshwari@123', 'rajeshwari@gmail.com', 'ENGINEERING_MATHEMATICS_1|ENGINEERING_MECHANICS|ENGINEERING_MATHEMATICS_2'),\
+('Dr. Suresh Nambiar', 'sunambiar', 'suresh@123', 'suresh@gmail.com', 'ENGINEERING_MATHEMATICS_1|ENGINEERING_MECHANICS'),\
 ('Dr. Neelam Choudhury', 'nechoudhury', 'neelam@123', 'neelam@gmail.com', 'BASIC_ELECTRONICS_FOR_ELECTRICAL_ENGINEERS'),\
 ('Prof. Vikram Bhattacharya', 'vibhattacharya', 'vikram@123', 'vikram@gmail.com', 'BASIC_ELECTRONICS_FOR_ELECTRICAL_ENGINEERS'),\
 ('Dr. Sunita Bansal', 'subansal', 'sunita@123', 'sunita@gmail.com', 'BIOSCIENCE_FOR_ELECTRICAL_ENGINEERS'),\
@@ -131,7 +129,7 @@ try:
 ('Prof. Mohan Srinivasan', 'mosrinivasan', 'mohan@123', 'mohan@gmail.com', 'INDIAN_KNOWLEDGE_SYSTEM'),\
 ('Dr. Divya Kapoor', 'dikapoor', 'divya@123', 'divya@gmail.com', 'ENGINEERING_MATHEMATICS_2'),\
 ('Prof. Ashok Verma', 'asverma', 'ashok@123', 'ashok@gmail.com', 'ENGINEERING_GRAPHICS'),\
-('Prof. Sanjay Kulkarni', 'sakulkarni', 'sanjay@123', 'sanjay@gmail.com', 'ENGINEERING_GRAPHICS|ELECTRONICS_CIRCUIT_ANALYSIS_AND_DESIGN|MICROPROCESSOR_AND_MICROCONTROLLER'),\
+('Prof. Sanjay Kulkarni', 'sakulkarni', 'sanjay@123', 'sanjay@gmail.com', 'ENGINEERING_GRAPHICS|ELECTRONICS_CIRCUIT_ANALYSIS_AND_DESIGN'),\
 ('Dr. Nitin Saxena', 'nisaxena', 'nitin@123', 'nitin@gmail.com', 'BASIC_ELECTRONICS'),\
 ('Prof. Lata Banerjee', 'labanerjee', 'lata@123', 'lata@gmail.com', 'BASIC_ELECTRONICS'),\
 ('Dr. Gopal Narayanan', 'gonarayanan', 'gopal@123', 'gopal@gmail.com', 'NUMERICAL_TECHNIQUES'),\
@@ -145,24 +143,19 @@ try:
 ('Dr. Lata Krishnan', 'lakrishnan', 'lata@123', 'lata@gmail.com', 'ELECTRONICS_CIRCUIT_ANALYSIS_AND_DESIGN'),\
 ('Dr. Ramesh Kulkarni', 'rakulkarni', 'ramesh@123', 'ramesh@gmail.com', 'ANALOG_COMMUNICATION'),\
 ('Dr. Meera Sen', 'mesen', 'meera@123', 'meera@gmail.com', 'ANALOG_COMMUNICATION'),\
-('Dr. Nikhil Patil', 'nipatil', 'nikhil@123', 'nikhil@gmail.com', 'DIGITAL_LOGIC_DESIGN'),\
-('Dr. Kavita Menon', 'kamenon', 'kavita@123', 'kavita@gmail.com', 'DIGITAL_LOGIC_DESIGN'),\
-('Dr. Anjali Verma', 'anverma', 'anjali@123', 'anjali@gmail.com', 'PYTHON_PROGRAMMING'),\
-('Dr. Ramesh Gupta', 'ragupta', 'ramesh@123', 'ramesh@gmail.com', 'PYTHON_PROGRAMMING'),\
-('Dr. Pooja Sharma', 'posharma', 'pooja@123', 'pooja@gmail.com', 'INTEGRATED_CIRCUITS_AND_APPLICATIONS'),\
-('Dr. Vikas Menon', 'vimenon2', 'vikas@123', 'vikas@gmail.com', 'INTEGRATED_CIRCUITS_AND_APPLICATIONS'),\
-('Dr. Kiran Desai', 'kidesai', 'kiran@123', 'kiran@gmail.com', 'MATHEMATICS_FOR_ELECTRICAL_ENGINEERS_2'),\
+('Dr. Pooja Sharma', 'posharma', 'pooja@123', 'pooja@gmail.com', 'PYTHON_PROGRAMMING'),\
 ('Prof. Alok Mishra', 'almishra', 'alok@123', 'alok@gmail.com', 'COMPUTER_ORGANIZATION'),\
 ('Dr. Neeta Desai', 'nedesai', 'neeta@123', 'neeta@gmail.com', 'COMPUTER_ORGANIZATION'),\
 ('Prof. Rakesh Tiwari', 'ratiwari', 'rakesh@123', 'rakesh@gmail.com', 'DIGITAL_COMMUNICATION'),\
-('Dr. Priya Nanda', 'prnanda', 'priya@123', 'priya@gmail.com', 'DIGITAL_COMMUNICATION|FILTER_THEORY'),\
+('Dr. Priya Nanda', 'prnanda', 'priya@123', 'priya@gmail.com', 'DIGITAL_COMMUNICATION'),\
 ('Dr. Sameer Jadhav', 'sajadhav', 'sameer@123', 'sameer@gmail.com', 'FILTER_THEORY'),\
-('Dr. Kamal Batra', 'kbatra', 'kamal@123', 'kamal@gmail.com', 'PROBABILITY_AND_STATISTICS'),\
-('Prof. Aruna Singh', 'arsingh', 'aruna@123', 'aruna@gmail.com', 'PROBABILITY_AND_STATISTICS'),\
-('Prof. Nilesh Rane', 'nirane', 'nilesh@123', 'nilesh@gmail.com', 'POWER_ELECTRONICS'),\
-('Dr. Shruti Nair', 'shnair', 'shruti@123', 'shruti@gmail.com', 'POWER_ELECTRONICS'),\
-('Dr. Ritu Sinha', 'risinha', 'ritu@123', 'ritu@gmail.com', 'PRINCIPLE_OF_COMMUNICATION_SYSTEMS'),\
-('Prof. Tarun Malhotra', 'tamalhotra', 'tarun@123', 'tarun@gmail.com', 'PRINCIPLE_OF_COMMUNICATION_SYSTEMS'),\
+('Dr. Komal Dixit', 'kodixit', 'komal@123', 'komal@gmail.com', 'FILTER_THEORY'),\
+('Prof. Meera Kapoor', 'mekapoor', 'meera@123', 'meera@gmail.com', 'PROBABILITY_AND_STATISTICS'),\
+('Prof. Anil Joshi', 'anjoshi', 'anil@123', 'anil@gmail.com', 'PROBABILITY_AND_STATISTICS'),\
+('Prof. Nikhil Bansal', 'nibansal', 'nikhil@123', 'nikhil@gmail.com', 'POWER_ELECTRONICS'),\
+('Dr. Kavita Rao', 'karao', 'kavita@123', 'kavita@gmail.com', 'POWER_ELECTRONICS'),\
+('Prof. Rajeev Sinha', 'rasinha', 'rajeev@123', 'rajeev@gmail.com', 'PRINCIPLE_OF_COMMUNICATION_SYSTEMS'),\
+('Dr. Neelima Reddy', 'nereddy', 'neelima@123', 'neelima@gmail.com', 'PRINCIPLE_OF_COMMUNICATION_SYSTEMS'),\
 ('Dr. Meenal Rathi', 'mralathi', 'meenal@123', 'meenal@gmail.com', 'WIRELESS_COMMUNICATION'),\
 ('Dr. Harshita Bansal', 'harbansal', 'harshita@123', 'harshita@gmail.com', 'WIRELESS_COMMUNICATION'),\
 ('Prof. Reena Kamat', 'reena.kamat', 'reena@123', 'reena@gmail.com', 'BASICS_OF_VLSI'),\

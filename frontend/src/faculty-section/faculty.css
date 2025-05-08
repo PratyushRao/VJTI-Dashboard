@@ -150,7 +150,7 @@ table{
   margin:2%;
   font-family: "roboto mono", monospace;
   border-spacing: 0;
-  border: 2px solid var(--primary);
+  border: 1px solid var(--primary);
   box-shadow: 4px 4px var(--primary);
   padding:0.8rem;
   background-color: var(--prim-soft);
