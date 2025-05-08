@@ -29,12 +29,13 @@ export default function MainContent() {
     };
 
     return <div className="main-content">
-        <div className='title'>Your Classes:</div>
+        <h4 className='sub-section-title'>📚 Your Classes:</h4>
         <div className="class-container">
             {Object.entries(cData).map(([sub, [branch, sem]], idx: number) => (
                 <div className="classes" key={idx} onClick={(e) => { e.preventDefault(); RequestData(sub); }}>
                     <div className="subject">{sub}</div>
-                    <div className="year">{`Branch: BTech ${branch}, Semester: ${sem}`}</div>
+                    <div className="branch-label"><div className = "faculty-label">Branch:</div> B.Tech [{branch}]</div>
+                    <div className="semester"><div className="faculty-label">Semester:</div> {sem}</div>
                 </div>
             ))}
         </div>
